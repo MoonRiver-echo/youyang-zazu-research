@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研究概述 · 《酉阳杂俎》志怪叙事与晚唐文化史</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="site-logo-title">酉阳杂俎研究</span>
+      <span class="site-logo-sub">志怪叙事与晚唐文化史</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-item active">研究概述</a>
+      <a href="framework.html" class="nav-item">研究框架</a>
+      <a href="analysis.html" class="nav-item">文本分析</a>
+      <a href="data.html" class="nav-item">数据与数据库</a>
+      <a href="bibliography.html" class="nav-item">参考文献</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">目录</div>
+      <ul class="sidebar-nav">
+        <li><a href="#abstract" class="active">摘要</a></li>
+        <li><a href="#problem">问题意识</a></li>
+        <li><a href="#method">方法论</a></li>
+        <li><a href="#structure">研究结构</a></li>
+        <li><a href="#findings">主要发现</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">数据资源</div>
+      <ul class="sidebar-nav">
+        <li><a href="data.html">SQLite数据库</a></li>
+        <li><a href="data.html#tables">数据表结构</a></li>
+        <li><a href="data.html#viz">统计可视化</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-title-block">
+      <h1 class="page-title">《酉阳杂俎》志怪叙事文本的文化特征与晚唐文化史研究</h1>
+      <p class="page-subtitle">——以《诺皋记》《支诺皋》为例</p>
+    </div>
+
+    <section id="abstract" class="content-section">
+      <h2>摘要</h2>
+      <p>《酉阳杂俎》作为唐代志怪笔记的集大成之作，其《诺皋记》《支诺皋》五篇更是全书志怪叙事的精华所在。本研究以这五篇为核心研究对象，运用叙事学与文化史相结合的方法，在数字人文技术辅助下，对147条文本进行筛选与分类，最终确定95条叙事文本，并归纳为变化、遭遇、梦、冥界、预兆、因果、禁忌、异境、遇鬼、物怪、病治、术法等12个类别。</p>
+      <p>研究发现，《诺皋》五篇的叙事文本呈现出鲜明的"异/常"二元对立结构、事件之间的叙事空白、以及真实可靠的叙述者等文本特征。通过对同一类型叙事文本的内部比较与外部比较，揭示了晚唐时期志怪叙事从宗教玄想向世俗化转变的文化趋势：仙境与人世的距离被显著缩短，冥界官僚体系呈现人性化特征，精怪形象趋于温和，金钱观念渗透进超自然叙事。这些特征共同指向了晚唐士人在动荡社会中对现实生活的关注，以及儒释道三教合流在志怪文本中的具体表现。</p>
+      <p style="text-indent:0;"><strong>关键词：</strong>酉阳杂俎；诺皋记；支诺皋；志怪叙事；叙事学；文化史；晚唐</p>
+    </section>
+
+    <section id="problem" class="content-section">
+      <h2>问题意识</h2>
+      <p>回顾《酉阳杂俎》研究，大体可以分为三个方向：其一，对跨文本中的异文现象进行分析与研究，如刘传鸿对《酉阳杂俎》中兼字词的考校；其二，对《酉阳杂俎》的版本考校，这一领域以方南生、潘建国等人的研究为首；其三，对《酉阳杂俎》的叙事学特征与文化传统研究，如赖春桃对其对魏晋六朝游仙故事的发展与继承的研究、杭心仪对叙事文本中叙事空白现象的研究，以及《支诺皋·叶限》故事和《灰姑娘》故事的比较，等等。</p>
+      <p>这些研究或受限于篇章，或受限于技术，往往是选取其中具有代表性的一个或几个故事进行小范围论述，很少连缀成篇。基于这一研究现状，本研究尝试通过数字化文本并将其分类的方式，以可视化的方式让数据客观、直接地进行比较，以使研究者能够直观地体会到该书的叙事特征与文化史意义。</p>
+      <p style="text-indent:0;">具体而言，本研究关注以下核心问题：</p>
+      <ul>
+        <li>《诺皋》《支诺皋》五篇中的叙事文本呈现何种类型学特征？</li>
+        <li>这些叙事文本在结构上如何体现"异"与"常"的二元对立关系？</li>
+        <li>叙事空白与叙述者在志怪文本中发挥何种功能？</li>
+        <li>同一类型的叙事文本在内部比较中呈现怎样的文化逻辑？</li>
+        <li>从文化史角度看，晚唐志怪叙事反映了怎样的社会心态变迁？</li>
+      </ul>
+    </section>
+
+    <section id="method" class="content-section">
+      <h2>方法论</h2>
+      <p>本研究采用<strong>叙事学</strong>与<strong>文化史</strong>相结合的研究路径。在叙事学层面，借鉴普罗普（Vladimir Propp）的功能分析与丁乃通（Nai-tung Ting）的中国民间故事类型索引方法，对文本进行情节概括与类型归类；在文化史层面，引入新文化史（New Cultural History）的视角，将志怪叙事视为特定历史语境下的文化产物，关注文本背后的社会心态与知识观念。</p>
+      <p>在数据处理方面，本研究采用<strong>数字人文</strong>方法：首先对原始文本进行OCR识别与校勘，利用LLM辅助完成文本分段与分类标注，最终构建SQLite数据库，支持结构化的统计分析与可视化呈现。</p>
+      <h3>文本选择标准</h3>
+      <p>本研究对叙事文本的定义为：<strong>"叙事文本应该是一个故事性的文本，它具有情节、叙述者、叙事结构等层级，它的内部串联了一个及以上的事件。"</strong>据此，从《诺皋》五篇共147条文本中，排除不具备情节的描述性文本（如"昆仑之墟，帝之下都……"等神谱式记载），最终筛选出95条符合叙事文本定义的条目。</p>
+      <h3>分类方法</h3>
+      <p>在总结丁乃通分类法与普罗普功能性分类的基础上，本研究采取以下分类原则：</p>
+      <ol>
+        <li>筛选合适的叙事文本；</li>
+        <li>对文本进行概括，去除描述性语言，将内容高度概括为简洁的情节连接；</li>
+        <li>依据情节的重要程度进行分类，控制每条叙事文本只能被归纳为其中一类；</li>
+        <li>当同一文本中出现两个或两个以上情节时，按照情节重要程度进行分类。</li>
+      </ol>
+    </section>
+
+    <section id="structure" class="content-section">
+      <h2>研究结构</h2>
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead>
+            <tr><th>章节</th><th>内容</th><th>核心方法</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>一、绪论</td>
+              <td>研究背景、问题意识、文献综述</td>
+              <td>学术史梳理</td>
+            </tr>
+            <tr>
+              <td>二、数据库说明</td>
+              <td>文本清洗、分类标注、数据可视化流程</td>
+              <td>数字人文</td>
+            </tr>
+            <tr>
+              <td>三、叙事文本阐释</td>
+              <td>叙事文本定义、分类标准、12类叙事文本统计</td>
+              <td>叙事学、类型学</td>
+            </tr>
+            <tr>
+              <td>四、叙事文本的特征</td>
+              <td>异/常二元对立、叙事空白、叙述者分析；同一类型的内部与外部比较</td>
+              <td>结构主义叙事学</td>
+            </tr>
+            <tr>
+              <td>五、文化史分析</td>
+              <td>叙事特征的流变及文化含义；文本体现的文化特点</td>
+              <td>新文化史</td>
+            </tr>
+            <tr>
+              <td>六、结论与反思</td>
+              <td>总结研究发现，提出研究局限与未来方向</td>
+              <td>理论综合</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="findings" class="content-section">
+      <h2>主要发现</h2>
+      <h3>发现一："变化"与"遭遇"为叙事主体</h3>
+      <p>在95条叙事文本中，"变化"类23条（24.2%）、"遭遇"类18条（18.9%），二者合计占比超过四成，构成《诺皋》五篇的叙事主体。这表明晚唐志怪叙事的核心关注点在于<strong>人与异类的互动关系</strong>以及<strong>形态转换的神秘体验</strong>。</p>
+
+      <h3>发现二：叙事空白的普遍存在</h3>
+      <p>大量文本中存在事件之间因果关系的缺失，如《和州刘录事者》中骨珠化人的原因未明、《有士人庄在渭南》中白衣老者与胡桃怪物的关系未交代。这种叙事空白并非作者笔力不逮，而是有意为之——通过模糊现实空间与超现实空间的边界，营造"异就是常"的独特美学效果。</p>
+
+      <h3>发现三：世俗化倾向显著</h3>
+      <p>与前代游仙故事相比，《酉阳杂俎》中的仙境空间被极大缩短：进入仙境不再需翻山越岭，而是"风吹到一处"即可；仙境与凡间的时间流逝几乎同步；冥界官僚呈现人性化缺陷。这些特征表明，晚唐时期宗教的虚无缥缈色彩正在褪去，超自然叙事日益与现实生活接轨。</p>
+
+      <h3>发现四：三教合流的文化景观</h3>
+      <p>文本中同时出现道教的尸解观念、佛教的因果报应、儒家的伦理教化，且三者并非泾渭分明，而是相互渗透。例如冥界差使既有道教特征，又受到佛教生死簿观念影响，而人物塑造则体现了儒家思想。</p>
+
+      <h3>发现五：人本主义转向</h3>
+      <p>相比于转世轮回母题，死而复生母题在文本中更为常见。这一差异指向了晚唐社会文化从关注来世向关注今世的转变，体现了以人为本的史学观念与文学观念的兴起。</p>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">酉阳杂俎研究</span>
+      <p>志怪叙事文本的文化特征与晚唐文化史研究</p>
+    </div>
+    <div class="footer-credit">数字人文 · 叙事学 · 文化史</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
