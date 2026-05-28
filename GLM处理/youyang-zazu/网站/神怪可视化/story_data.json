@@ -1,0 +1,763 @@
+{
+  "stories": [
+    {
+      "pid": "V14-P003",
+      "volume_title": "卷十四·诺皋记上",
+      "narrative_category": "异闻志怪",
+      "title": "帝江·刑天舞干戚",
+      "brief": "天山有神名浑水敦，六足重翼无面目，实为帝江。刑天与帝争神，被断首葬于常羊山，乃以乳为目、脐为口，操干戚而舞。",
+      "monster_type": "神话异兽",
+      "original_text": "天山有神，是为浑水敦。状如橐而光，其光如火。六足重翼，无面目。是识（一曰「嗜音」）歌舞，实为帝江。刑天与帝争神，帝断其首，葬之常羊山，乃以乱为目，脐为口，操干戚而舞焉。",
+      "themes": [
+        {
+          "broad_category": "丧葬冥界",
+          "level1_subject": "葬",
+          "level2_subject": "葬",
+          "specific_subject": "葬"
+        }
+      ],
+      "shengui_keywords": [
+        "神"
+      ],
+      "keyword_count": 1,
+      "translation": "天山有一位神，名叫浑水敖。它的形状像口袋，通体发光，那光亮如同火焰。它有六只脚、重叠的翅膀，没有面目。它辨识（一说“嗜好”）歌舞，其实就是帝江。刑天与天帝争夺神位，天帝砍下了他的头颅，埋葢在常羊山。刑天便以双乳为目，以肚脐为口，手持干戚翥斧继续起舞。"
+    },
+    {
+      "pid": "V14-P006",
+      "volume_title": "卷十四·诺皋记上",
+      "narrative_category": "异闻志怪",
+      "title": "天翁张坚窃车登天",
+      "brief": "渔阳人张坚少不羁，蓄白雀得报天翁杀之未遂，后窃天翁车乘白龙登天，易百官，封白雀为上卿，以刘翁为太山太守主生死籍。",
+      "monster_type": "神仙志怪",
+      "original_text": "天翁姓张名坚，字刺渴，渔阳人。少不羁，无所拘忌。常张罗得一白雀，爱而养之。梦天刘翁责怒，每欲杀之，白雀辄以报坚，坚设诸方待之，终莫能害。天翁遂下观之，坚盛设宾主，乃窃骑天翁车，乘白龙，振策登天。天公乘馀龙追之，不及。坚既到玄宫，易百官，杜塞北门，封白雀为上卿侯，改白雀之胤不产于下土。刘翁失治，徘徊五岳作灾。坚患之，以刘翁为太山太守，主生死之籍。",
+      "themes": [
+        {
+          "broad_category": "动物",
+          "level1_subject": "鸟类",
+          "level2_subject": "雀",
+          "specific_subject": "雀"
+        },
+        {
+          "broad_category": "动物",
+          "level1_subject": "神物",
+          "level2_subject": "龙",
+          "specific_subject": "龙"
+        },
+        {
+          "broad_category": "建筑寺塔",
+          "level1_subject": "寺观",
+          "level2_subject": "观",
+          "specific_subject": "观"
+        },
+        {
+          "broad_category": "建筑寺塔",
+          "level1_subject": "宫殿",
+          "level2_subject": "宫",
+          "specific_subject": "宫"
+        },
+        {
+          "broad_category": "梦兆占验",
+          "level1_subject": "梦",
+          "level2_subject": "梦",
+          "specific_subject": "梦"
+        }
+      ],
+      "shengui_keywords": [
+        "龙"
+      ],
+      "keyword_count": 1,
+      "translation": "天翁姓张名坚，字刺渴，渔阳人。他年少时不守规矩，不受任何拘束。他曾张网捕得一只白雀，十分喜爱便养了起来。梦中天上的刘翁对他大发雷霆，每次想要杀他，白雀总会事先报信给张坚，张坚于是设下各种防备，最终刘翁始终无法加害于他。刘翁于是亲自下界来查看，张坚盛设宴席款待，然后趁机窃骑了刘翁的车驾，乘白龙挥鞭直上九天。天公乘着其余的龙追赶，却没有追上。张坚到达天宫之后，便更换了百官，封闭了北天门，封白雀为上卿侯，更改白雀的后代使其不再降生人间。刘翁失去了治理之权，便徘徊于五岳之间兴灾作祸。张坚对此颇为忧虑，于是任命刘翁为泰山太守，掌管生死簿籍。"
+    },
+    {
+      "pid": "V14-P010",
+      "volume_title": "卷十四·诺皋记上",
+      "narrative_category": "异闻志怪",
+      "title": "灶神名隗状如美女",
+      "brief": "灶神名隗，状如美女，又姓张名单字子郭，夫人字卿忌，有六女。常以月晦日上天白人罪状，大者夺纪三百日，小者夺算百日。其属神有天帝娇孙、天帝大夫等。",
+      "monster_type": "民俗神灵",
+      "original_text": "灶神名隗，状如美女。又姓张名单，字子郭。夫人字卿忌，有六女，皆名察（一作祭）洽。常以月晦日上天白人罪状，大者夺纪，纪三百日，小者夺算，算一百日。故为天帝督使，下为地精。己丑日，日出卯时上天，禺中下行署，此日祭得福。其属神有天帝娇孙、天帝大夫、天帝都尉、天帝长兄、硎上童子、突上紫宫君、太和君、玉池夫人等。一曰灶神名壤子也。",
+      "themes": [
+        {
+          "broad_category": "神怪妖魅",
+          "level1_subject": "精",
+          "level2_subject": "精",
+          "specific_subject": "精"
+        },
+        {
+          "broad_category": "建筑寺塔",
+          "level1_subject": "宫殿",
+          "level2_subject": "宫",
+          "specific_subject": "宫"
+        }
+      ],
+      "shengui_keywords": [
+        "精",
+        "神",
+        "天帝"
+      ],
+      "keyword_count": 3,
+      "translation": "灶神名叫隗，形貌如同美女。又说他姓张名单，字子郭。他的夫人字卿忌，有六个女儿，都名叫察（一作祭）洽。灶神常在每月最后一天上天禪告人的罪状，罪大的减寿一纪（三百日），罪小的减寿一算（一百日）。他本是天帝的督使，在下界则为地精。巳丑日，日出卯时升天，到日中便下到各署办公，在这一天祭祠灶神可得福。他属下的神灵有天帝娇孙、天帝大夫、天帝都尉、天帝长兄、硇上童子、突上紫宫君、太和君、玉池夫人等。一说灶神名叫壤子。"
+    },
+    {
+      "pid": "V14-P014",
+      "volume_title": "卷十四·诺皋记上",
+      "narrative_category": "异闻志怪",
+      "title": "古龟兹国王降伏毒龙",
+      "brief": "龟兹国王阿主儿有神异，能降伏毒龙。龙化狮子，王即乘之。龙怒腾空至城北二十里，王叱之，龙惧神力降服，后常乘龙而行。",
+      "monster_type": "降妖伏魔",
+      "original_text": "古龟兹国王阿主儿者，有神异，力能降伏毒龙。时有贾人买市人金银宝货，至夜中，钱并化为炭。境内数百家皆失金宝。王有男先出家，成阿罗汉果。王问之，罗汉曰：「此龙所为。龙居北山，其头若虎，今在某处眠耳。」王乃易衣持剑默出。至龙所，见龙卧，将欲斩之，因曰：「吾斩寐龙，谁知吾有神力。」遂叱龙，龙惊起，化为狮子，王即乘其上。龙怒，作雷声，腾空至城北二十里。王谓龙曰：「尔不降，当断尔头。」龙惧王神力，乃作人语曰：「勿杀我，我当与王乘，欲有所向，随心即至。」王许之。后常乘龙而行。",
+      "themes": [
+        {
+          "broad_category": "异域物产",
+          "level1_subject": "异国",
+          "level2_subject": "龟兹",
+          "specific_subject": "龟兹"
+        },
+        {
+          "broad_category": "佛道信仰",
+          "level1_subject": "佛",
+          "level2_subject": "罗汉",
+          "specific_subject": "罗汉"
+        },
+        {
+          "broad_category": "动物",
+          "level1_subject": "兽类",
+          "level2_subject": "虎",
+          "specific_subject": "虎"
+        },
+        {
+          "broad_category": "动物",
+          "level1_subject": "爬行",
+          "level2_subject": "龟",
+          "specific_subject": "龟"
+        },
+        {
+          "broad_category": "动物",
+          "level1_subject": "神物",
+          "level2_subject": "龙",
+          "specific_subject": "龙"
+        },
+        {
+          "broad_category": "器物技艺",
+          "level1_subject": "武器",
+          "level2_subject": "剑",
+          "specific_subject": "剑"
+        },
+        {
+          "broad_category": "建筑寺塔",
+          "level1_subject": "城楼",
+          "level2_subject": "城",
+          "specific_subject": "城"
+        }
+      ],
+      "shengui_keywords": [
+        "神",
+        "罗汉",
+        "异",
+        "龙"
+      ],
+      "keyword_count": 4,
+      "translation": "古龟兹国王阿主儿，有神异的法力，能够降伏毒龙。当时有商人在集市上买了金银宝货，到了半夜，钱全都变成了炭。国境之内数百家都丢失了金银财宝。国王有个儿子先前出了家，修成了阿罗汉果位。国王去问他，罗汉说：“这是龙干的。龙住在北山，龙头像虎，此刻正在某处睡觉。”国王于是换了衣服，持剑惄惄出门。到了龙的住处，看见龙正卧着，刚要斩杀它，又转念一想：“我斩杀一条睡龙，谁能知道我有神力？”于是大声叱喝，龙惊跃而起，变作一头狮子，国王随即骑了上去。龙大怒，发出雷鸣之声，腾空飞到城北二十里处。国王对龙说：“你若不降服，我就砍下你的头。”龙惧怕国王的神力，便说人话道：“不要杀我，我愿意给国王当坐骑，想要去哪里，随心即到。”国王答应了。此后国王便常常乘龙出行。"
+    },
+    {
+      "pid": "V15-P001",
+      "volume_title": "卷十五·诺皋记下",
+      "narrative_category": "异闻志怪",
+      "title": "刘录事食鱼骨珠化人",
+      "brief": "和州刘录事善食鱠，咯出骨珠子大如黑豆，置于瓯中顷刻长及人遂掴刘。良久各散走俱及后门相触翕成一人，乃刘也。自是恶鱠。",
+      "monster_type": "妖怪变形",
+      "original_text": "和州刘录事者，大历中，罢官居和州旁县。食兼数人，尤能食，常言味未尝果腹。邑客乃网鱼百馀斤，会于野亭，观其下箸。初食数叠，忽似哽，咯出一骨珠子，大如黑豆，乃置于茶瓯中，以叠覆之。食未半，怪覆瓯倾侧，刘举视之，向者骨珠已长数寸，如人状。座客竞观之，随视而长。顷刻长及人，遂刘，因欧流血。良久，各散走。一循厅之西，一转厅之左，俱及后门相触，翕成一人，乃刘也，神已痴矣。半日方能言，访其所以，皆不省。自是恶。",
+      "themes": [
+        {
+          "broad_category": "动物",
+          "level1_subject": "鱼类",
+          "level2_subject": "鱼",
+          "specific_subject": "鱼"
+        },
+        {
+          "broad_category": "建筑寺塔",
+          "level1_subject": "寺观",
+          "level2_subject": "观",
+          "specific_subject": "观"
+        },
+        {
+          "broad_category": "饮食医药",
+          "level1_subject": "食",
+          "level2_subject": "茶",
+          "specific_subject": "茶"
+        }
+      ],
+      "shengui_keywords": [
+        "神",
+        "怪"
+      ],
+      "keyword_count": 2,
+      "translation": "和州刘录事，大历年间罢官后住在和州旁县。他饭量抵得上好几个人，尤其擅长吃鱍（生鱼片），常说鱍的美味从未让他觉得吃饱过。县中门客便网了一百多斤鱼，在野亭聚会，看他动筷进食。他刚开始吃了几叠鱍，忽然像被哽住了，咯出一颗骨珠子，大如黑豆，便放在茶瓯中，用叠子盖住。鱍还没吃到一半，奇怪的事发生了——盖着的茶瓯倾斜摇晃，刘录事掀开一看，先前那颗骨珠已经长到好几寸长了，像人形。在座的客人争相观看，骨珠随着众人的注视不断增长。顷刻之间便长成一个人的大小，随即攻击刘录事，令他呕血。过了很久，两个骨人各自散开逃走——一个沿厅堂西侧跑，一个转厅堂左侧跑，到了后门处两相碰撞，合为一体，正是刘录事本人，只是神志已经痴傻了。过了半天才能说话，问他缘由，全都记不得了。从此以后他便厌恶吃鱍了。"
+    }
+  ],
+  "stats": {
+    "narrative_stats": [
+      {
+        "narrative_category": "动植物谱录",
+        "paragraph_count": 294,
+        "absolute_percentage": "37.03%"
+      },
+      {
+        "narrative_category": "异闻志怪",
+        "paragraph_count": 176,
+        "absolute_percentage": "22.17%"
+      },
+      {
+        "narrative_category": "佛道异闻",
+        "paragraph_count": 68,
+        "absolute_percentage": "8.56%"
+      },
+      {
+        "narrative_category": "人物轶事",
+        "paragraph_count": 66,
+        "absolute_percentage": "8.31%"
+      },
+      {
+        "narrative_category": "知识考辨",
+        "paragraph_count": 33,
+        "absolute_percentage": "4.16%"
+      },
+      {
+        "narrative_category": "神仙方术",
+        "paragraph_count": 31,
+        "absolute_percentage": "3.90%"
+      },
+      {
+        "narrative_category": "异境异域",
+        "paragraph_count": 31,
+        "absolute_percentage": "3.90%"
+      },
+      {
+        "narrative_category": "器艺技法",
+        "paragraph_count": 30,
+        "absolute_percentage": "3.78%"
+      },
+      {
+        "narrative_category": "征兆占验",
+        "paragraph_count": 20,
+        "absolute_percentage": "2.52%"
+      },
+      {
+        "narrative_category": "饮食医药",
+        "paragraph_count": 19,
+        "absolute_percentage": "2.39%"
+      },
+      {
+        "narrative_category": "礼俗制度",
+        "paragraph_count": 14,
+        "absolute_percentage": "1.76%"
+      },
+      {
+        "narrative_category": "冥界报应",
+        "paragraph_count": 8,
+        "absolute_percentage": "1.01%"
+      },
+      {
+        "narrative_category": "天文地理",
+        "paragraph_count": 3,
+        "absolute_percentage": "0.38%"
+      },
+      {
+        "narrative_category": "器物名物",
+        "paragraph_count": 1,
+        "absolute_percentage": "0.13%"
+      }
+    ],
+    "theme_stats": [
+      {
+        "broad_category": "动物",
+        "paragraph_count": 449,
+        "absolute_percentage": "56.55%"
+      },
+      {
+        "broad_category": "人物政事",
+        "paragraph_count": 216,
+        "absolute_percentage": "27.20%"
+      },
+      {
+        "broad_category": "建筑寺塔",
+        "paragraph_count": 175,
+        "absolute_percentage": "22.04%"
+      },
+      {
+        "broad_category": "植物",
+        "paragraph_count": 140,
+        "absolute_percentage": "17.63%"
+      },
+      {
+        "broad_category": "器物技艺",
+        "paragraph_count": 122,
+        "absolute_percentage": "15.37%"
+      },
+      {
+        "broad_category": "神怪妖魅",
+        "paragraph_count": 101,
+        "absolute_percentage": "12.72%"
+      },
+      {
+        "broad_category": "饮食医药",
+        "paragraph_count": 95,
+        "absolute_percentage": "11.96%"
+      },
+      {
+        "broad_category": "佛道信仰",
+        "paragraph_count": 67,
+        "absolute_percentage": "8.44%"
+      },
+      {
+        "broad_category": "梦兆占验",
+        "paragraph_count": 58,
+        "absolute_percentage": "7.30%"
+      },
+      {
+        "broad_category": "异域物产",
+        "paragraph_count": 57,
+        "absolute_percentage": "7.18%"
+      },
+      {
+        "broad_category": "丧葬冥界",
+        "paragraph_count": 42,
+        "absolute_percentage": "5.29%"
+      },
+      {
+        "broad_category": "天文地理",
+        "paragraph_count": 27,
+        "absolute_percentage": "3.40%"
+      },
+      {
+        "broad_category": "异人方术",
+        "paragraph_count": 6,
+        "absolute_percentage": "0.76%"
+      },
+      {
+        "broad_category": "礼俗制度",
+        "paragraph_count": 3,
+        "absolute_percentage": "0.38%"
+      }
+    ],
+    "theme_frequency": [
+      {
+        "level1_subject": "兽类",
+        "level2_subject": "马",
+        "appearance_count": 134
+      },
+      {
+        "level1_subject": "人物",
+        "level2_subject": "人物",
+        "appearance_count": 81
+      },
+      {
+        "level1_subject": "鱼类",
+        "level2_subject": "鱼",
+        "appearance_count": 66
+      },
+      {
+        "level1_subject": "城楼",
+        "level2_subject": "城",
+        "appearance_count": 62
+      },
+      {
+        "level1_subject": "神物",
+        "level2_subject": "龙",
+        "appearance_count": 61
+      },
+      {
+        "level1_subject": "僧",
+        "level2_subject": "僧",
+        "appearance_count": 53
+      },
+      {
+        "level1_subject": "酒",
+        "level2_subject": "酒",
+        "appearance_count": 49
+      },
+      {
+        "level1_subject": "人物",
+        "level2_subject": "成式",
+        "appearance_count": 48
+      },
+      {
+        "level1_subject": "寺观",
+        "level2_subject": "寺",
+        "appearance_count": 46
+      },
+      {
+        "level1_subject": "昆虫",
+        "level2_subject": "虫",
+        "appearance_count": 44
+      },
+      {
+        "level1_subject": "寺观",
+        "level2_subject": "观",
+        "appearance_count": 39
+      },
+      {
+        "level1_subject": "木",
+        "level2_subject": "竹",
+        "appearance_count": 38
+      },
+      {
+        "level1_subject": "仙",
+        "level2_subject": "仙",
+        "appearance_count": 33
+      },
+      {
+        "level1_subject": "兽类",
+        "level2_subject": "象",
+        "appearance_count": 32
+      },
+      {
+        "level1_subject": "鬼",
+        "level2_subject": "鬼",
+        "appearance_count": 31
+      },
+      {
+        "level1_subject": "药",
+        "level2_subject": "药",
+        "appearance_count": 29
+      },
+      {
+        "level1_subject": "爬行",
+        "level2_subject": "蛇",
+        "appearance_count": 29
+      },
+      {
+        "level1_subject": "宫殿",
+        "level2_subject": "宫",
+        "appearance_count": 28
+      },
+      {
+        "level1_subject": "宫殿",
+        "level2_subject": "殿",
+        "appearance_count": 28
+      },
+      {
+        "level1_subject": "佛",
+        "level2_subject": "佛",
+        "appearance_count": 28
+      },
+      {
+        "level1_subject": "梦",
+        "level2_subject": "梦",
+        "appearance_count": 27
+      },
+      {
+        "level1_subject": "用具",
+        "level2_subject": "盘",
+        "appearance_count": 26
+      },
+      {
+        "level1_subject": "经法",
+        "level2_subject": "释",
+        "appearance_count": 25
+      },
+      {
+        "level1_subject": "地理",
+        "level2_subject": "泉",
+        "appearance_count": 25
+      },
+      {
+        "level1_subject": "兽类",
+        "level2_subject": "虎",
+        "appearance_count": 24
+      },
+      {
+        "level1_subject": "兽类",
+        "level2_subject": "鹿",
+        "appearance_count": 24
+      },
+      {
+        "level1_subject": "武器",
+        "level2_subject": "刀",
+        "appearance_count": 23
+      },
+      {
+        "level1_subject": "精",
+        "level2_subject": "精",
+        "appearance_count": 23
+      },
+      {
+        "level1_subject": "异国",
+        "level2_subject": "波斯",
+        "appearance_count": 22
+      },
+      {
+        "level1_subject": "爬行",
+        "level2_subject": "龟",
+        "appearance_count": 21
+      },
+      {
+        "level1_subject": "鸟类",
+        "level2_subject": "燕",
+        "appearance_count": 20
+      },
+      {
+        "level1_subject": "果",
+        "level2_subject": "桃",
+        "appearance_count": 20
+      },
+      {
+        "level1_subject": "乐器",
+        "level2_subject": "鼓",
+        "appearance_count": 19
+      },
+      {
+        "level1_subject": "帝王",
+        "level2_subject": "玄宗",
+        "appearance_count": 19
+      },
+      {
+        "level1_subject": "兽类",
+        "level2_subject": "兔",
+        "appearance_count": 18
+      },
+      {
+        "level1_subject": "果",
+        "level2_subject": "梨",
+        "appearance_count": 18
+      },
+      {
+        "level1_subject": "异国",
+        "level2_subject": "西域",
+        "appearance_count": 18
+      },
+      {
+        "level1_subject": "尸",
+        "level2_subject": "尸",
+        "appearance_count": 18
+      },
+      {
+        "level1_subject": "用具",
+        "level2_subject": "镜",
+        "appearance_count": 17
+      },
+      {
+        "level1_subject": "经法",
+        "level2_subject": "梵",
+        "appearance_count": 17
+      },
+      {
+        "level1_subject": "鸟类",
+        "level2_subject": "雀",
+        "appearance_count": 16
+      },
+      {
+        "level1_subject": "兽类",
+        "level2_subject": "狐",
+        "appearance_count": 14
+      },
+      {
+        "level1_subject": "草",
+        "level2_subject": "芝",
+        "appearance_count": 14
+      },
+      {
+        "level1_subject": "兽类",
+        "level2_subject": "犬",
+        "appearance_count": 14
+      },
+      {
+        "level1_subject": "武器",
+        "level2_subject": "剑",
+        "appearance_count": 13
+      },
+      {
+        "level1_subject": "乐器",
+        "level2_subject": "钟",
+        "appearance_count": 13
+      },
+      {
+        "level1_subject": "昆虫",
+        "level2_subject": "蜂",
+        "appearance_count": 13
+      },
+      {
+        "level1_subject": "木",
+        "level2_subject": "松",
+        "appearance_count": 13
+      },
+      {
+        "level1_subject": "鸟类",
+        "level2_subject": "鹰",
+        "appearance_count": 13
+      },
+      {
+        "level1_subject": "鸟类",
+        "level2_subject": "雕",
+        "appearance_count": 12
+      }
+    ],
+    "total_paragraphs": 794,
+    "total_shengui_paragraphs": 341,
+    "nuogao_total": 65,
+    "nuogao_shengui": 44,
+    "keyword_frequency": [
+      {
+        "keyword": "神",
+        "count": 70
+      },
+      {
+        "keyword": "异",
+        "count": 70
+      },
+      {
+        "keyword": "龙",
+        "count": 61
+      },
+      {
+        "keyword": "变",
+        "count": 41
+      },
+      {
+        "keyword": "怪",
+        "count": 40
+      },
+      {
+        "keyword": "仙",
+        "count": 33
+      },
+      {
+        "keyword": "鬼",
+        "count": 31
+      },
+      {
+        "keyword": "佛",
+        "count": 28
+      },
+      {
+        "keyword": "释",
+        "count": 25
+      },
+      {
+        "keyword": "精",
+        "count": 23
+      },
+      {
+        "keyword": "梵",
+        "count": 17
+      },
+      {
+        "keyword": "符",
+        "count": 15
+      },
+      {
+        "keyword": "狐",
+        "count": 14
+      },
+      {
+        "keyword": "道士",
+        "count": 11
+      },
+      {
+        "keyword": "魅",
+        "count": 10
+      },
+      {
+        "keyword": "凤",
+        "count": 10
+      },
+      {
+        "keyword": "失所在",
+        "count": 9
+      },
+      {
+        "keyword": "魂",
+        "count": 8
+      },
+      {
+        "keyword": "仙人",
+        "count": 7
+      },
+      {
+        "keyword": "地狱",
+        "count": 7
+      },
+      {
+        "keyword": "冥",
+        "count": 6
+      },
+      {
+        "keyword": "妖",
+        "count": 6
+      },
+      {
+        "keyword": "魄",
+        "count": 6
+      },
+      {
+        "keyword": "术士",
+        "count": 6
+      },
+      {
+        "keyword": "咒",
+        "count": 6
+      },
+      {
+        "keyword": "魔",
+        "count": 5
+      },
+      {
+        "keyword": "菩萨",
+        "count": 5
+      },
+      {
+        "keyword": "玉女",
+        "count": 5
+      },
+      {
+        "keyword": "异人",
+        "count": 5
+      },
+      {
+        "keyword": "法师",
+        "count": 4
+      },
+      {
+        "keyword": "天师",
+        "count": 4
+      },
+      {
+        "keyword": "麒麟",
+        "count": 4
+      },
+      {
+        "keyword": "袈裟",
+        "count": 4
+      },
+      {
+        "keyword": "蛟",
+        "count": 4
+      },
+      {
+        "keyword": "天帝",
+        "count": 3
+      },
+      {
+        "keyword": "飞行",
+        "count": 3
+      },
+      {
+        "keyword": "变化",
+        "count": 3
+      },
+      {
+        "keyword": "真人",
+        "count": 3
+      },
+      {
+        "keyword": "尸解",
+        "count": 3
+      },
+      {
+        "keyword": "巫",
+        "count": 3
+      }
+    ]
+  },
+  "translation_note": "以上白话译文由AI生成，仅供参考"
+}

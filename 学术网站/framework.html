@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研究框架 · 《酉阳杂俎》志怪叙事与晚唐文化史</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="site-logo-title">酉阳杂俎研究</span>
+      <span class="site-logo-sub">志怪叙事与晚唐文化史</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-item">研究概述</a>
+      <a href="framework.html" class="nav-item active">研究框架</a>
+      <a href="analysis.html" class="nav-item">文本分析</a>
+      <a href="data.html" class="nav-item">数据与数据库</a>
+      <a href="bibliography.html" class="nav-item">参考文献</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">研究框架</div>
+      <ul class="sidebar-nav">
+        <li><a href="#db-method" class="active">数据库方法</a></li>
+        <li><a href="#narrative-def">叙事文本定义</a></li>
+        <li><a href="#classification">分类体系</a></li>
+        <li><a href="#category-detail">类目详解</a></li>
+        <li><a href="#theory">理论框架</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-title-block">
+      <h1 class="page-title">研究框架</h1>
+      <p class="page-subtitle">方法论、分类体系与理论工具</p>
+    </div>
+
+    <section id="db-method" class="content-section">
+      <h2>数据库方法</h2>
+      <p>本研究的数据处理部分需要解决三个核心问题：第一，清洗生文本，以形成可靠的原始文本；第二，对文本进行精确分类，并选出符合研究需要的文本和类别；第三，数据可视化与平台构建。</p>
+      <p>由于原始文本以文言文写成，且中文的语义多样性本身会极大影响LLM的判断，因此需要两个前置条件：首先是可供参考的、具有高信度的注释文本，使LLM可以通过现代汉语注释来反推正文应如何断句与分类；其次是高度清晰且可执行的分类逻辑。</p>
+      <p style="text-indent:0;">通过撰写Skills文档，将问题拆解为四个任务：</p>
+      <ol>
+        <li><strong>文本去重</strong>：将两份经过OCR处理的生文本进行比较，若文段完全重复，则视为"真文本"；</li>
+        <li><strong>注释分离</strong>：识别特定格式的文字为注释，将"真文本"与注释区分，分别生成真文本文档和注释文档；</li>
+        <li><strong>文本分段</strong>：以真文本文档为目标，参考注释文档，对全部文本进行分段；</li>
+        <li><strong>文本分类</strong>：提供分类细则（包括分类逻辑、类目、分类目标、分类案例与输出结果），对真文本文档进行分类。</li>
+      </ol>
+      <p>基于前期的分类整理，发现《酉阳杂俎》中对研究对象记录占比最高的正是《诺皋》五篇，每一篇的超自然力量占比都达到了100%，且这五篇在艺术价值上评价最高。因此选择这些文本作为核心论述对象。</p>
+      <p>由于探讨的是文段叙事结构与文化史之间的关系，而目标文本中确实有一部分不符合叙事学严格意义上的叙事价值，因此通过给定定义和案例的方式，要求LLM进行筛选，并对筛选出来的文本进行二次分类，使最终呈现的分类具有情节，符合叙事文本的定义。最终在147个文本中筛选出<strong>95个</strong>有价值的叙事文本，并分为<strong>12类</strong>。</p>
+    </section>
+
+    <section id="narrative-def" class="content-section">
+      <h2>叙事文本的定义及选择依据</h2>
+      <p>童庆炳指出："叙事性作品是以叙事功能为主的文学作品……对叙事性作品的分析实际上是对这种叙述活动全过程的分析。"从这一描述可以看出，叙事文本是与现实紧密联系的。</p>
+      <p>综合叙事学的发展，本研究将叙事文本定义为：<strong>"叙事文本应该是一个故事性的文本，它具有情节、叙述者、叙事结构等层级，它的内部串联了一个及以上的事件。"</strong></p>
+      <p>对叙事文本的关注，主要讨论的是叙事内容范畴，即"构成一段叙述话语主题的故事内容，即被讲述的故事，包括事件、人物、场景等等。"</p>
+      <p>鲁迅在《中国小说史略》中描述《酉阳杂俎》："……或录秘书，或叙异事，仙佛人鬼以至动植，弥不毕载，以类相聚，有如类书……"由此可见，书中大部分文本的排列方式类似于类书，收录的多是与某个门类相关的文句和段落，并非每一条都有较强的叙事特征。这一特点在《广动植》中体现得最为明显——该篇中几乎没有叙事文本，所有文本都是描述某物，不具有情节，也不串联事件。</p>
+      <p>李剑国指出，"成式首倡'志怪小说'一词"，并且评价："《天咫》、《玉格》、《壶史》、《盗侠》之属固已以幻丽见长，而<strong>《诺皋》五篇尤称佳制</strong>。"因此，《诺皋》五篇（《诺皋记上》《诺皋记下》《支诺皋上》《支诺皋中》《支诺皋下》）是全书志怪叙事的精华所在。</p>
+      <p>但是，即使在这五篇中，仍有部分文本不具备情节，例如开篇的几段神谱式记载（"昆仑之墟，帝之下都，百神所在也……"）。这类文本不符合叙事文本的定义，故而需要排除。经过筛选，147条文本中，最终确定<strong>95条</strong>为符合定义的叙事文本。</p>
+    </section>
+
+    <section id="classification" class="content-section">
+      <h2>分类体系</h2>
+      <p>普罗普在《民间故事的形态学》中归纳出民间故事的四条法则：人物的功能稳定不变；功能的数量有限；功能的顺序永远不变；所有童话故事在结构上属于同一类型。在这一框架下，一个故事中的事件可以被极简地概括为描述性话语。</p>
+      <p>然而，对中国民间故事来说，事情并不简单。丁乃通的《中国民间故事类型索引》显示，中国民间故事往往是嵌套式的，一个系列情节常常是另一个系列情节的引子。因此，直接套用普罗普或丁乃通的分类法难以完全覆盖《酉阳杂俎》的文本特征。</p>
+      <p style="text-indent:0;">本研究采取的分类策略是：</p>
+      <ul>
+        <li>筛选合适的叙事文本；</li>
+        <li>对文本进行概括，去除描述性语言，将内容高度概括为简洁的情节连接；</li>
+        <li>依据情节的重要程度进行分类，控制每条叙事文本只能被归纳为其中一类，以保持类目之间的区别度和类目内部的高相似度；</li>
+        <li>区分依据是关键情节的类型，如某叙事文本的核心情节是变化，则应被归纳为变化类；</li>
+        <li>当同一文本中出现两个或两个以上情节时，按照情节重要程度进行分类。</li>
+      </ul>
+    </section>
+
+    <section id="category-detail" class="content-section">
+      <h2>十二类目详解</h2>
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead>
+            <tr><th>类目</th><th>核心情节</th><th>段落数</th><th>占比</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>变化</strong></td><td>以"形变"为核心，强调人与异类之间的转换变化</td><td>23</td><td>24.2%</td></tr>
+            <tr><td><strong>遭遇</strong></td><td>以"人与异类正面相遇"为核心，强调"遭遇"这一过程本身</td><td>18</td><td>18.9%</td></tr>
+            <tr><td><strong>梦</strong></td><td>以"梦中经历"为核心，梦在叙述中起到传递信息的作用</td><td>7</td><td>7.4%</td></tr>
+            <tr><td><strong>冥界</strong></td><td>以"阳间之人接触冥司"为核心，表现为两种制度的交互</td><td>6</td><td>6.3%</td></tr>
+            <tr><td><strong>预兆</strong></td><td>以"先兆与应验"为核心，往往表现为延后应验</td><td>9</td><td>9.5%</td></tr>
+            <tr><td><strong>因果</strong></td><td>以"行为的后果"为核心，情节之间有明显的因果关系连接</td><td>4</td><td>4.2%</td></tr>
+            <tr><td><strong>禁忌</strong></td><td>以"触犯规则的后果"为核心，对象往往是某种奇物</td><td>3</td><td>3.2%</td></tr>
+            <tr><td><strong>异境</strong></td><td>以"进入异空间"为核心，异空间与正常空间以水、洞等相连</td><td>5</td><td>5.3%</td></tr>
+            <tr><td><strong>遇鬼</strong></td><td>以"直接遭遇鬼魂"为核心，往往描述与鬼的互动</td><td>4</td><td>4.2%</td></tr>
+            <tr><td><strong>物怪</strong></td><td>围绕奇异物品展开，物怪通常不具有意识</td><td>7</td><td>7.4%</td></tr>
+            <tr><td><strong>病治</strong></td><td>以"超自然的疾病"为核心，情节集中在致病和治病上</td><td>4</td><td>4.2%</td></tr>
+            <tr><td><strong>术法</strong></td><td>以"降伏妖魔"为核心，主人公多为道士、僧人</td><td>5</td><td>5.3%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>从分类数量可以看出，"变化"类和"遭遇"类占突出地位，二者合计超过四成。其次，"梦""预兆""物怪""冥界"也占有较大比重。这些内容的展开与完成，有赖于现实世界和想象世界的互动——这些类目实际上是与现实世界紧密联系在一起的。</p>
+    </section>
+
+    <section id="theory" class="content-section">
+      <h2>理论框架</h2>
+      <h3>叙事学理论</h3>
+      <p style="text-indent:0;">本研究主要运用以下叙事学工具：</p>
+      <ul>
+        <li><strong>二元对立结构</strong>：借鉴结构主义叙事学，分析文本中"异"与"常"的对立关系如何建构叙事张力；</li>
+        <li><strong>叙事空白</strong>：依据杭心仪的研究，区分时间空白与环境空白，分析作者有意隐瞒导致的读者想象空间；</li>
+        <li><strong>叙述者分析</strong>：区分可靠叙述者与不可靠叙述者，考察段成式作为隐藏叙述者的真实身份如何影响文本可信度；</li>
+        <li><strong>共时性与历时性</strong>：既关注叙事的内部结构（共时性分析），也追溯叙事传统的历史演变（历时性分析）。</li>
+      </ul>
+
+      <h3>文化史理论</h3>
+      <p>新文化史理论认为，对文化史的研究无法完全离开文学理论而进行。勒内·韦勒克指出，"文学显然可以代替许多东西——代替在国外旅行或羁留；代替直接的经验和想象的生活；还可以被历史家当作一种社会文献来使用。"</p>
+      <p>Lloyd S. Kramer认为，语言、文本和叙事结构在创造和描述史实上起到了积极作用。历史书写本身就具有一定的文学性质。因此，文学作品所表达的方式都反映着作者或以作者为中心的某一特定文化群体眼中的现实，反映着一定的社会文化。</p>
+      <p>王昕提出，志怪"搜奇记异"的文类特点，是一种被大众所普遍运用的叙述手段。由于受到不同朝代的历史文化语境的影响，这些志怪小说实际上是作者生活经验和知识在特定知识框架下的表达。只有从文化史的角度出发，才能真正认识并还原其创作的历史语境。</p>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">酉阳杂俎研究</span>
+      <p>志怪叙事文本的文化特征与晚唐文化史研究</p>
+    </div>
+    <div class="footer-credit">数字人文 · 叙事学 · 文化史</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>

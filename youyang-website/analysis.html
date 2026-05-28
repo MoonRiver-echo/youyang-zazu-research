@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数据分析 · 酉阳杂俎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/research.css">
+</head>
+<body>
+
+<div class="ink-bg ink-global"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" data-animate="fade-down">酉阳杂俎</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link" data-animate="fade-down">首页</a>
+      <a href="research.html" class="nav-link" data-animate="fade-down">研究</a>
+      <a href="analysis.html" class="nav-link active" data-animate="fade-down">数据</a>
+      <a href="references.html" class="nav-link" data-animate="fade-down">文献</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <p class="page-label" data-animate="fade-up">Data Analysis</p>
+    <h1 class="page-title" data-animate="slide-up">数据分析</h1>
+    <p class="page-desc" data-animate="fade-up">基于数字人文方法对《酉阳杂俎》419条标注数据进行统计分析与可视化</p>
+  </div>
+</header>
+
+<main class="research-content">
+  <div class="container">
+    <aside class="toc-sidebar" data-animate="fade-right">
+      <div class="toc-sticky">
+        <h3>分析维度</h3>
+        <ul>
+          <li><a href="#overview">数据概览</a></li>
+          <li><a href="#tags">标签分布</a></li>
+          <li><a href="#volumes">卷别分布</a></li>
+          <li><a href="#cooccur">交叉分析</a></li>
+          <li><a href="#heatmap">卷别热力图</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <article class="research-body">
+      <section id="overview" data-animate="fade-up">
+        <h2>数据概览</h2>
+        <div class="stats-grid">
+          <div class="stat-card" data-animate="scale-in">
+            <span class="stat-number">419</span>
+            <span class="stat-label">标注条目</span>
+          </div>
+          <div class="stat-card" data-animate="scale-in">
+            <span class="stat-number">20</span>
+            <span class="stat-label">涉及卷目</span>
+          </div>
+          <div class="stat-card" data-animate="scale-in">
+            <span class="stat-number">5</span>
+            <span class="stat-label">主题标签</span>
+          </div>
+          <div class="stat-card" data-animate="scale-in">
+            <span class="stat-number">728</span>
+            <span class="stat-label">标签总频次</span>
+          </div>
+        </div>
+        <p>本数据集基于《酉阳杂俎》20卷内容，对419条条目进行了主题标签标注。标注体系包含五个核心标签：<strong>神佛</strong>（佛道宗教相关内容）、<strong>鬼怪</strong>（鬼魂冥界叙事）、<strong>妖怪</strong>（精怪异闻）、<strong>神兽</strong>（奇异动物）、<strong>征兆</strong>（祥瑞灾异梦兆）。</p>
+      </section>
+
+      <section id="tags" data-animate="fade-up">
+        <h2>主题标签分布</h2>
+        <div class="chart-wrap">
+          <div class="bar-chart" id="tag-chart"></div>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>标签</th><th>出现次数</th><th>占比</th><th>说明</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag-dot" style="background:#c44a4a"></span>神佛</td><td>242</td><td>33.2%</td><td>佛教道教人物、寺观、经典、修行等</td></tr>
+              <tr><td><span class="tag-dot" style="background:#d4a574"></span>征兆</td><td>169</td><td>23.2%</td><td>祥瑞、灾异、梦兆、预言等</td></tr>
+              <tr><td><span class="tag-dot" style="background:#5a8a6a"></span>妖怪</td><td>146</td><td>20.1%</td><td>精怪、物怪、异闻故事等</td></tr>
+              <tr><td><span class="tag-dot" style="background:#6a7a9a"></span>神兽</td><td>107</td><td>14.7%</td><td>奇异动物、神兽、珍禽异兽等</td></tr>
+              <tr><td><span class="tag-dot" style="background:#8a6a8a"></span>鬼怪</td><td>64</td><td>8.8%</td><td>鬼魂、冥界、尸解、丧葬等</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>分析发现：</strong>"神佛"标签以242次高居首位，占全部标签的33.2%，说明佛道宗教叙事在《酉阳杂俎》中占据核心地位。这与唐代佛道二教兴盛的历史背景高度吻合。"征兆"（169次）与"妖怪"（146次）紧随其后，三者合计占比76.5%，构成了神怪宗教叙事的主体内容。</p>
+      </section>
+
+      <section id="volumes" data-animate="fade-up">
+        <h2>卷别分布统计</h2>
+        <div class="chart-wrap">
+          <div class="bar-chart horizontal" id="volume-chart"></div>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>卷目</th><th>标注条目</th><th>主要标签</th></tr></thead>
+            <tbody>
+              <tr><td>卷十·物异</td><td>39</td><td>神佛、神兽、征兆、妖怪</td></tr>
+              <tr><td>卷三·贝编</td><td>34</td><td>神佛、征兆、神兽</td></tr>
+              <tr><td>卷十四·诺皋记上</td><td>29</td><td>神佛、妖怪、征兆、神兽</td></tr>
+              <tr><td>卷二·玉格</td><td>28</td><td>神佛、妖怪、征兆、鬼怪</td></tr>
+              <tr><td>卷十七·广动植之二</td><td>28</td><td>神兽、神佛、征兆</td></tr>
+              <tr><td>卷十九·广动植类之四</td><td>25</td><td>神佛、征兆、妖怪</td></tr>
+              <tr><td>卷十六·广动植之一</td><td>24</td><td>征兆、神佛、妖怪、神兽、鬼怪</td></tr>
+              <tr><td>卷十五·诺皋记下</td><td>23</td><td>妖怪、神佛、征兆</td></tr>
+              <tr><td>卷十二·语资</td><td>21</td><td>妖怪、征兆、神佛</td></tr>
+              <tr><td>卷十一·广知</td><td>20</td><td>神佛、神兽、鬼怪</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>分析发现：</strong>标注条目最多的卷目是"卷十·物异"（39条），这与该卷专门记录奇异事物的内容定位一致。"诺皋记"上下两卷合计52条，是志怪故事最集中的部分。值得注意的是，"玉格"一卷虽以道教神仙品阶为主，却包含了大量鬼怪、妖怪内容，反映了道教宇宙观与民间信仰的交融。</p>
+      </section>
+
+      <section id="cooccur" data-animate="fade-up">
+        <h2>标签交叉分析</h2>
+        <div class="chart-wrap">
+          <div class="bar-chart" id="cooccur-chart"></div>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>标签组合</th><th>共现次数</th><th>解读</th></tr></thead>
+            <tbody>
+              <tr><td>妖怪 + 神佛</td><td>83</td><td>佛道语境中的精怪叙事</td></tr>
+              <tr><td>征兆 + 神佛</td><td>77</td><td>宗教灵验与祥瑞感应</td></tr>
+              <tr><td>妖怪 + 征兆</td><td>66</td><td>异象作为命运预兆</td></tr>
+              <tr><td>神佛 + 神兽</td><td>48</td><td>佛教/道教中的瑞兽</td></tr>
+              <tr><td>神佛 + 鬼怪</td><td>39</td><td>佛道对冥界的共同书写</td></tr>
+              <tr><td>征兆 + 神兽</td><td>34</td><td>动物异象作为征兆</td></tr>
+              <tr><td>妖怪 + 神兽</td><td>30</td><td>动物成精的妖怪叙事</td></tr>
+              <tr><td>妖怪 + 鬼怪</td><td>24</td><td>鬼怪与妖怪的边界模糊</td></tr>
+              <tr><td>征兆 + 鬼怪</td><td>24</td><td>鬼魂显灵作为预兆</td></tr>
+              <tr><td>神兽 + 鬼怪</td><td>19</td><td>冥界神兽与鬼文化</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>分析发现：</strong>"妖怪+神佛"的共现频率最高（83次），说明精怪叙事往往发生在佛道宗教语境中，僧人、道士是降妖除怪的主要行动者。"征兆+神佛"（77次）反映了宗教灵验与祥瑞感应的紧密关联。值得注意的是，"神佛+鬼怪"的共现（39次）揭示了佛教地狱观与道教冥界观在叙事层面的融合。</p>
+      </section>
+
+      <section id="heatmap" data-animate="fade-up">
+        <h2>卷别-标签热力分布</h2>
+        <div class="heatmap-wrap" id="heatmap-chart"></div>
+        <div class="data-table-wrap">
+          <table class="data-table compact">
+            <thead><tr><th>卷目</th><th>神佛</th><th>征兆</th><th>妖怪</th><th>神兽</th><th>鬼怪</th></tr></thead>
+            <tbody>
+              <tr><td>卷二·玉格</td><td>26</td><td>13</td><td>15</td><td>9</td><td>10</td></tr>
+              <tr><td>卷三·贝编</td><td>28</td><td>10</td><td>5</td><td>8</td><td>5</td></tr>
+              <tr><td>卷八·梦</td><td>4</td><td>13</td><td>3</td><td>0</td><td>3</td></tr>
+              <tr><td>卷十·物异</td><td>25</td><td>8</td><td>8</td><td>9</td><td>4</td></tr>
+              <tr><td>卷十一·广知</td><td>12</td><td>5</td><td>5</td><td>8</td><td>7</td></tr>
+              <tr><td>卷十二·语资</td><td>7</td><td>10</td><td>12</td><td>5</td><td>0</td></tr>
+              <tr><td>卷十四·诺皋记上</td><td>20</td><td>12</td><td>12</td><td>10</td><td>5</td></tr>
+              <tr><td>卷十五·诺皋记下</td><td>12</td><td>9</td><td>15</td><td>6</td><td>5</td></tr>
+              <tr><td>卷十六·广动植之一</td><td>9</td><td>10</td><td>7</td><td>7</td><td>7</td></tr>
+              <tr><td>卷十七·广动植之二</td><td>8</td><td>8</td><td>5</td><td>11</td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>分析发现：</strong>从热力分布可见，"卷三·贝编"以神佛标签（28次）最为突出，与该卷专记佛教典故的内容定位相符。"卷八·梦"的征兆标签（13次）高度集中，体现了梦境作为预兆的核心功能。"诺皋记"上下两卷的标签分布较为均衡，是五类主题交汇最为集中的区域，堪称全书神怪宗教叙事的缩影。</p>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">酉阳杂俎</span>
+        <p>唐代志怪笔记 · 神鬼妖怪宗教文化 · 数字人文研究</p>
+      </div>
+      <p class="footer-credit">数字人文探索</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/analysis.js"></script>
+</body>
+</html>

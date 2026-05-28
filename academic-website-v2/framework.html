@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研究框架 · 酉阳杂俎研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-left">
+      <span class="project-badge">学术研究</span>
+      <span>唐代志怪笔记文献数字化研究</span>
+    </div>
+    <div class="top-bar-right">
+      <a href="data/youyang_zazu.db" download>SQLite数据库</a>
+      <a href="data/analysis.json" download>JSON数据</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="site-logo-title">酉阳杂俎研究</span>
+      <span class="site-logo-sub">志怪叙事与晚唐文化史</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-item">首页</a>
+      <a href="framework.html" class="nav-item active">研究框架</a>
+      <a href="analysis.html" class="nav-item">文本分析</a>
+      <a href="visualization.html" class="nav-item">数据可视化</a>
+      <a href="bibliography.html" class="nav-item">参考文献</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">研究框架</div>
+      <ul class="sidebar-nav">
+        <li><a href="#definition" class="active">叙事文本定义</a></li>
+        <li><a href="#selection">选择依据</a></li>
+        <li><a href="#classification">12类分类体系</a></li>
+        <li><a href="#method">分类方法</a></li>
+        <li><a href="#database">数据库说明</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">数据下载</div>
+      <div class="data-downloads">
+        <a href="data/youyang_zazu.db" download class="download-btn">
+          <span class="icon">🗄️</span><span>SQLite数据库 (.db)</span>
+        </a>
+        <a href="data/analysis.json" download class="download-btn">
+          <span class="icon">📊</span><span>分析数据 (JSON)</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-title-block">
+      <h1 class="page-title">研究框架</h1>
+      <p class="page-subtitle">叙事文本的定义、筛选标准与12类分类体系</p>
+    </div>
+
+    <section id="definition" class="content-section">
+      <h2>叙事文本的定义</h2>
+      <p>在文本分析中，往往容易出现这样一个误解，即叙事等于文本本身。事实上，叙事以及叙事文本讲述的是更抽象的内容。叙事文本往往是不有趣的。童庆炳指出"叙事性作品是以叙事功能为主的文学作品……对叙事性作品的分析实际上是对这种叙述活动全过程的分析，具体从三个层面进行：首先分析叙述内容，即叙述活动同客观社会生活之间的关系，这是从叙事话语的内容中分析外部世界的事物进入文学化后的形态特征……"</p>
+      <p>从童庆炳的描述中可以看出，叙事文本是与现实紧密联系的。在叙事学的发展过程中，结构主义和俄国的形式主义曾一度占据西方叙事学的主要地位。普林斯在编纂《叙事学词典》时，在"叙事学"条目下注明了两种相互对立的观点：以托多洛夫为代表的认为叙事学研究的对象是叙事的普遍特征，尤其是故事的普遍结构，而不考虑叙事的媒介；而与之相对的是以热奈特为代表的认为，叙事学的研究范畴应该是以语言为媒介的叙事行为，即只局限于叙事文学，它既不试图概括故事，也对故事的意义不感兴趣，叙事学只是在研究反映在故事与叙事文本关系上的叙事话语。</p>
+      <p>综合来讲，叙事学关注的是故事的叙事层面，叙述者、叙事模式、叙事结构、叙事手段、叙事对象，都可以是叙事学的研究点。那么，到底什么是文学的叙事呢？童庆炳将文学叙事的基本特征概括为两个方面："叙事内容是社会生活事件过程，即人的社会行为及其结果"，以及"叙事是话语的虚构"。他将文学的叙事概括为"用话语虚构社会生活事件过程"。</p>
+      <p>通俗易懂的来讲，"书籍是人类进步的阶梯"不是叙事，因为它没有情节，也不存在讲述的过程，更没有表达任何事件，尽管它饱含哲理，但这不构成一个叙事；反之，"她咬了一口苹果"虽然在趣味性上远不及前者，但它的的确确在讲述一个事件，而且通过这句话，一个及以上的事件被串联起来了，这就能够构成一个故事，因此，从这一层面上来说，这句话当然是一个叙事。</p>
+      <p>因此，对于叙事文本，本研究将其定义为：<strong>"叙事文本应该是一个故事性的文本，它具有情节、叙述者、叙事结构等层级，它的内部串联了一个及以上的事件。"</strong></p>
+      <p>对叙事文本的关注，主要讨论的是叙事内容范畴。所谓叙事内容，就是"构成一段叙述话语主题的故事内容，即被讲述的故事，包括事件、人物、场景等等"。童庆炳还提到："传统的叙事文学创作中常常有意无意地假定同接受者之间有一种默契，要求读者相信所叙述的内容是真实的……后代的叙事文学沿袭了这一心理传统。例如我国唐代文人撰写的神奇荒诞的传奇故事，往往在篇末说明是作者从何处得知，甚至有时还要介绍作品中人物的近况如何等等，显然是希望读者把这些离奇的故事当作真实的事实来接受。"童庆炳所描述的这一现象，在《酉阳杂俎》中体现得非常明显。</p>
+    </section>
+
+    <section id="selection" class="content-section">
+      <h2>选择依据</h2>
+      <p>鲁迅在《中国小说史略》中这样描述《酉阳杂俎》的内容："……或录秘书，或叙异事，仙佛人鬼以至动植，弥不毕载，以类相聚，有如类书……"由此可见，《酉阳杂俎》中大部分文本的排列方式，甚至部分文本的记录方式都类似于类书。类书是对中国古代类百科全书的书籍的称呼，其文本往往以某类主题的方式聚集在一起，收录的也多是各书中与某个门类相关的文句和段落，其文本较为驳杂，不是每一条都有较强的叙事特征。这一特点在《广动植》中体现得最为明显，这一篇中几乎没有叙事文本，所有文本都是描述某物，不具有情节，也不串联事件，因此，在分析这类文本时，很难使用叙事学的技巧，因为它们无法分类。这也就说明了，如果以二元对立关系或共时性与历时性作为切入点，对文本的筛选是非常必要的。</p>
+      <p>基于这样的分类原则，《诺皋》五篇共147条，最终选入叙事文本、可以进行讨论的，共有95条。</p>
+      <p>在筛选中，有一类文本容易与描述性文本混淆，如《诺皋记上·华不注泉》：</p>
+      <blockquote>
+        <p>华不注泉，齐顷公取水处，方圆百馀步。北齐时，有人以绳千尺沉石试之不穷，石出，赤如血，其人不久坐事死。</p>
+      </blockquote>
+      <p>以及《诺皋记上·东乡卧石》：</p>
+      <blockquote>
+        <p>荆州永丰县东乡里有卧石一，长九尺六寸。其形似人体，青黄隐起，状若雕刻。境若旱，便齐手而举之，小举小雨，大举大雨。相传此石忽见于此，本长九尺，今加六寸矣。</p>
+      </blockquote>
+      <p>可以看出，这两段文字实际上是有情节的，并且文本串联了一件及以上的事情，所以这样的段落应该被列入叙事文本的分类。而以下这类文本则不具备情节：</p>
+      <blockquote>
+        <p>昆仑之墟，帝之下都，百神所在也。大荒中有灵山，有十巫，曰咸、即、盼、彭、姑、真、礼、抵、谢、罗，从此升降。</p>
+        <cite>《诺皋记上》开篇描述性文本</cite>
+      </blockquote>
+    </section>
+
+    <section id="classification" class="content-section">
+      <h2>12类分类体系</h2>
+      <p>普罗普在《民间故事的形态学》一书中，根据人物在故事中的功能，归纳出了民间故事的四条法则：人物的功能在故事中是稳定不变的要素；对于童话故事来讲，已知功能的数量是有限的；功能的顺序是永远不变的；所有童话故事在结构上都属于同一类型。在这样的要求下，一个故事中的事件可以被极简地概括为一些描述性话语。</p>
+      <p>然而，对中国民间故事来说，事情则不那么简单。如果阅读丁乃通的《中国民间故事类型索引》就会发现，中国民间故事往往是嵌套式的。因此，对叙事文本的分类采取了以下方式：</p>
+      <ul>
+        <li>筛选合适的叙事文本；</li>
+        <li>对文本进行概括，去除描述性语言，将内容高度概括为简洁的情节连接；</li>
+        <li>依据情节的重要程度进行分类，控制每一条叙事文本只能被归纳为其中一类，以保持类目之间的区别度和类目内部的高相似度；</li>
+        <li>当同一文本中出现两个或两个以上情节时，则按照情节重要程度进行分类，将其归属在程度最重要的情节类目下。</li>
+      </ul>
+
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead>
+            <tr><th>类目</th><th>核心情节</th><th>段落数</th><th>占比</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>变化</strong></td><td>以"形变"为核心，强调人与异类之间的转换变化</td><td class="num">23</td><td class="num">24.2%</td></tr>
+            <tr><td><strong>遭遇</strong></td><td>以"人与异类正面相遇"为核心，强调"遭遇"这一过程本身</td><td class="num">18</td><td class="num">18.9%</td></tr>
+            <tr><td><strong>梦</strong></td><td>以"梦中经历"为核心，梦在叙述中起到的是传递信息的作用</td><td class="num">7</td><td class="num">7.4%</td></tr>
+            <tr><td><strong>冥界</strong></td><td>以"阳间之人接触冥司"为核心，表现为两种制度的交互</td><td class="num">6</td><td class="num">6.3%</td></tr>
+            <tr><td><strong>预兆</strong></td><td>以"先兆与应验"为核心，往往表现为延后应验</td><td class="num">9</td><td class="num">9.5%</td></tr>
+            <tr><td><strong>因果</strong></td><td>以"行为的后果"为核心，情节之间有明显的因果关系连接</td><td class="num">4</td><td class="num">4.2%</td></tr>
+            <tr><td><strong>禁忌</strong></td><td>以"触犯规则的后果"为核心，对象往往是某种奇物</td><td class="num">3</td><td class="num">3.2%</td></tr>
+            <tr><td><strong>异境</strong></td><td>以"进入异空间"为核心，异空间与正常空间以水、洞等相连</td><td class="num">5</td><td class="num">5.3%</td></tr>
+            <tr><td><strong>遇鬼</strong></td><td>以"直接遭遇鬼魂"为核心，往往描述与鬼的互动</td><td class="num">4</td><td class="num">4.2%</td></tr>
+            <tr><td><strong>物怪</strong></td><td>围绕奇异物展开，物怪通常不具有意识</td><td class="num">7</td><td class="num">7.4%</td></tr>
+            <tr><td><strong>病治</strong></td><td>以"超自然的疾病"为核心，情节集中在致病和治病上</td><td class="num">4</td><td class="num">4.2%</td></tr>
+            <tr><td><strong>术法</strong></td><td>以"降伏妖魔"为核心，主人公多为道士、僧人</td><td class="num">5</td><td class="num">5.3%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>从分类数量上可以看出，在类目上，"变化"类和"遭遇"类占突出地位，其次，"梦"、"预兆"、"物怪"、"冥界"也占有较大的比重。而这些内容的展开与完成，则有赖于现实世界和想象世界的互动，也就是说，这些类目实际上是与现实世界紧密联系在一起的。</p>
+    </section>
+
+    <section id="method" class="content-section">
+      <h2>分类方法</h2>
+      <h3>"变化"类</h3>
+      <p>从叙事结构上来看，"变化"类的叙事核心聚焦在人与异常互动时产生的变化上。变化主要可以分成三类：人变为异类或升格；异类现原形或消散；画与人的双向互动。其中，数量最多的是第二类，即异类现原形或异类最终消散。对于这些文本，除了叙事结构上的分类，其他的区分方式则展现出一种二元对立结构的态势，从结局来看，文本可以被分类为异类消散或主人公死亡，而从变化本身来看，则可以被分类为变化是否可逆。在不同的分类条件下，体现的是对不同话题的关注。</p>
+
+      <h3>"遭遇"类</h3>
+      <p>"遭遇"类是分类中比重占比第二的类别，也是《诺皋》五篇中的次主要主题。"遭遇"类的叙事文本通常遵循着相同的叙事结构，大体可以被概括为"偶遇异类—互动/冲突—异类离去/显形"的结构。"遭遇"类相较于"变化"类，更关注人与异类之间的互动关系。总的来说，可以将这一类文本分为两个子类，分别是敌对关系和共存关系，大多数文本中，异类与人类都是不适宜共存的关系，少数较为关系不尖锐的文本，最后也往往以异类消失或者异类被驱逐作结。</p>
+
+      <h3>"梦"类与"预兆"类</h3>
+      <p>对于"梦"类文本，需要做出一个区分。在《酉阳杂俎》中，有单独记录与梦有关的章节《梦》篇，记载的内容有关梦兆、噩梦、解梦的内容。就郭倩倩对《梦》篇的研究，此篇内占比重较大的是梦兆应验型，这与《诺皋》五篇中占比重最高的"梦"类文本模式是相似的。而李阔龙则指出，《酉阳杂俎》在《梦》篇中所关注的涉梦故事，主要叙述的是梦的内容与结果和占梦家群体，相比于唐传奇中的涉梦故事，《酉阳杂俎·梦》显然更关注的是梦所带来的神秘力量。葛莹莹则通过《酉阳杂俎·梦》论述了其背后深刻的唐代占梦文化。</p>
+      <p>"预兆"类文本描述的是先兆应验的过程，与"梦"类文本之间的差异是，"梦"类文本中提到的预兆在应验时具有滞后性，且故事时间极短，往往是主人公刚从梦境世界离开，梦中的内容就得到了应验。而"预兆"类文本的故事时间往往较长，且先兆通常是现实性的，是在现实生活中被发现的，而不是只有当事人知道的。</p>
+    </section>
+
+    <section id="database" class="content-section">
+      <h2>数据库说明</h2>
+      <p>本研究的数据部分需要解决三个问题：第一，清洗生文本，以形成可靠的原始文本；第二，对文本进行精确分类，并选出符合研究需要的文本和类别；第三，数据可视化与平台构建。</p>
+      <p>通过撰写Skills文档，把这些问题拆解成若干任务，并不断优化提示，要求LLM完成任务。总体来说，问题一与问题二被拆成了四个任务：</p>
+      <ol>
+        <li>将两份经过OCR处理的生文本进行比较，如果文段完全重复，则将其视为"真文本"，若不重合，则不处理。</li>
+        <li>对于有注释的生文本1与生文本2，有某格式的文字视为注释，将"真文本"与注释区分，分别生成真文本文档和注释文档。</li>
+        <li>将真文本文档视为目标文档，参考注释文档，对目标文档中的全部文本进行分段。</li>
+        <li>对真文本文档进行分类，并提供分类细则，分类细则需要包括：分类逻辑，类目，分类目标，分类案例与输出结果。</li>
+      </ol>
+      <p>通过这个文档，对原始数据完成了分类处理，最后输出了依据叙事结构和描写对象的表格。依据表格内容，对表格进行SQLite建库，然后将数据库可视化。至此，完成了文本研究的数据基础。</p>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">酉阳杂俎研究</span>
+      <p>志怪叙事文本的文化特征与晚唐文化史</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">首页</a>
+      <a href="framework.html">研究框架</a>
+      <a href="analysis.html">文本分析</a>
+      <a href="visualization.html">数据可视化</a>
+      <a href="bibliography.html">参考文献</a>
+    </div>
+    <div class="footer-credit">学术研究网站</div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

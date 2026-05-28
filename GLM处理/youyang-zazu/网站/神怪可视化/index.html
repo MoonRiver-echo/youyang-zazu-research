@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>酉阳杂俎 · 诺皋记 — 神怪可视化</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f1ea;--card:#faf8f0;--ink:#2c2c2c;--vermillion:#8b2500;
+  --bamboo:#5b7e5b;--gold:#b8860b;--muted:#7a7265;--light:#e8e2d6;
+  --shadow:0 4px 20px rgba(0,0,0,.08);--radius:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Serif SC","Songti SC","SimSun","STSong",serif;background:var(--bg);color:var(--ink);line-height:1.8;overflow-x:hidden}
+a{color:var(--vermillion);text-decoration:none}
+
+/* ── Fade-in animation ── */
+.reveal{opacity:1;transform:none;transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── Hero ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:linear-gradient(180deg,#f4f1ea 0%,#e8e0d0 100%);position:relative}
+.hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 30% 40%,rgba(139,37,0,.06),transparent 60%),radial-gradient(circle at 70% 60%,rgba(91,126,91,.06),transparent 60%);pointer-events:none}
+.hero-title{font-size:clamp(3rem,8vw,6rem);font-weight:900;letter-spacing:.4em;color:var(--ink);position:relative;margin-bottom:1rem;text-shadow:2px 2px 0 rgba(139,37,0,.1)}
+.hero-subtitle{font-size:clamp(1rem,3vw,1.5rem);color:var(--muted);letter-spacing:.3em;margin-bottom:2rem}
+.hero-arrow{animation:bounce 2s infinite;cursor:pointer;margin-top:2rem;font-size:1.5rem;color:var(--muted)}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+/* ── Section base ── */
+.section{max-width:960px;margin:0 auto;padding:4rem 2rem}
+.section h2{font-size:1.8rem;color:var(--vermillion);margin-bottom:1.5rem;border-bottom:2px solid var(--vermillion);padding-bottom:.5rem;display:inline-block}
+.section h3{font-size:1.4rem;color:var(--ink);margin:1.5rem 0 1rem}
+.section p{margin-bottom:1rem;text-align:justify}
+
+/* ── Author card ── */
+.author-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem;margin-bottom:2rem;border-left:4px solid var(--vermillion)}
+.author-name{font-size:1.6rem;font-weight:700;color:var(--vermillion);margin-bottom:.5rem}
+.author-detail{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+.source-note{font-size:.85rem;color:var(--muted);font-style:italic;margin-top:1rem}
+
+/* ── Direction section ── */
+.direction-box{background:linear-gradient(135deg,var(--card),#f0ede5);border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem;margin-bottom:2rem}
+.stat-inline{color:var(--vermillion);font-weight:700}
+.dimension-list{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
+.dimension-item{flex:1;min-width:200px;background:var(--card);border-radius:var(--radius);padding:1.5rem;border-top:3px solid var(--bamboo)}
+.dimension-item h4{color:var(--bamboo);font-size:1.1rem;margin-bottom:.5rem}
+
+/* ── Divider ── */
+.divider{text-align:center;padding:3rem 0;color:var(--muted);font-size:1.2rem;letter-spacing:1em;position:relative}
+.divider::before{content:'';position:absolute;top:50%;left:10%;width:80%;border-top:1px solid var(--light)}
+
+/* ── Carousel ── */
+.carousel-wrap{position:relative;overflow:hidden;margin:2rem 0;border-radius:12px;box-shadow:var(--shadow)}
+.carousel-track{display:flex;transition:transform .5s ease}
+.carousel-slide{min-width:100%;padding:2.5rem;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative}
+.slide-bg-0{background:linear-gradient(135deg,#1a0a00 0%,#3d1a00 40%,#8b2500 100%)}
+.slide-bg-1{background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 40%,#2d5a8e 100%)}
+.slide-bg-2{background:linear-gradient(135deg,#1a1a00 0%,#4a4a00 40%,#8b7a00 100%)}
+.slide-bg-3{background:linear-gradient(135deg,#0a2a0a 0%,#1a4a1a 40%,#2d6e2d 100%)}
+.slide-bg-4{background:linear-gradient(135deg,#1a0a1a 0%,#3d1a3d 40%,#6b2560 100%)}
+.slide-mist{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,.08),transparent 50%),radial-gradient(ellipse at 80% 30%,rgba(255,255,255,.05),transparent 40%),radial-gradient(ellipse at 50% 80%,rgba(0,0,0,.3),transparent 60%);pointer-events:none}
+.slide-number{font-size:.9rem;color:rgba(255,255,255,.5);letter-spacing:.2em;margin-bottom:.5rem}
+.slide-title{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:#fff;text-shadow:2px 2px 8px rgba(0,0,0,.5);margin-bottom:.8rem;position:relative;z-index:1}
+.slide-type{display:inline-block;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 14px;font-size:.85rem;margin-bottom:1rem}
+.slide-brief{font-size:1rem;color:rgba(255,255,255,.85);max-width:600px;line-height:1.8;margin-bottom:1rem;position:relative;z-index:1}
+.slide-img-placeholder{width:200px;height:140px;border-radius:8px;border:1px dashed rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.85rem;position:relative;z-index:1;margin-bottom:1rem}
+.carousel-dots{position:absolute;bottom:20px;left:20px;display:flex;gap:8px;z-index:5}
+.carousel-dots .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .3s}
+.carousel-dots .dot.active{background:#fff}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);color:#fff;border:none;padding:12px 16px;cursor:pointer;font-size:1.2rem;z-index:5;border-radius:4px;transition:background .3s}
+.carousel-btn:hover{background:rgba(0,0,0,.7)}
+.carousel-btn.prev{left:10px}
+.carousel-btn.next{right:10px}
+
+/* ── Story detail ── */
+.story-detail{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem;margin:2rem 0}
+.story-metadata{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;align-items:center}
+.story-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.85rem;background:var(--light);color:var(--ink)}
+.story-tag.keyword{background:rgba(139,37,0,.1);color:var(--vermillion);border:1px solid rgba(139,37,0,.2)}
+.story-tag.theme{background:rgba(91,126,91,.1);color:var(--bamboo);border:1px solid rgba(91,126,91,.2)}
+.original-text{font-size:1.05rem;line-height:2;background:var(--card);padding:1.5rem;border-radius:6px;border-left:3px solid var(--vermillion);margin:1.5rem 0}
+.original-text .annotation{color:var(--vermillion);border-bottom:1px dotted var(--vermillion);cursor:help;position:relative;background:rgba(139,37,0,.06);padding:0 2px;border-radius:2px}
+.original-text .annotation:hover{background:rgba(139,37,0,.12)}
+.annotation-tooltip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#2c2c2c;color:#fff;padding:8px 14px;border-radius:6px;font-size:.85rem;max-width:320px;min-width:120px;z-index:100;line-height:1.6;box-shadow:0 4px 12px rgba(0,0,0,.3);white-space:normal;text-align:left}
+.annotation-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#2c2c2c}
+.annotation:hover .annotation-tooltip{display:block}
+.translation-placeholder{background:repeating-linear-gradient(45deg,var(--card),var(--card) 10px,#f0ede5 10px,#f0ede5 20px);border:1px dashed var(--muted);border-radius:6px;padding:2rem;text-align:center;color:var(--muted);margin:1.5rem 0}
+.brief-box{background:rgba(139,37,0,.05);border-left:3px solid var(--vermillion);padding:1rem 1.5rem;border-radius:0 6px 6px 0;margin-top:1.5rem}
+
+/* ── Data section ── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2rem 0}
+.stat-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;text-align:center;border-top:3px solid var(--vermillion)}
+.stat-number{font-size:2.5rem;font-weight:900;color:var(--vermillion)}
+.stat-label{font-size:.95rem;color:var(--muted);margin-top:.3rem}
+
+/* ── Bar chart ── */
+.bar-chart{margin:2rem 0}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.bar-label{width:100px;font-size:.85rem;text-align:right;color:var(--ink);flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{flex:1;height:20px;background:var(--light);border-radius:10px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:10px;transition:width 1s ease}
+.bar-value{width:50px;font-size:.8rem;color:var(--muted);text-align:left}
+.bar-fill.highlight{background:linear-gradient(90deg,var(--vermillion),#c44020)}
+
+/* ── Keyword bubbles ── */
+.keyword-cloud{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:1rem;margin:2rem 0}
+.keyword-bubble{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(139,37,0,.08);color:var(--ink);font-weight:600;transition:transform .2s;cursor:default}
+.keyword-bubble:hover{transform:scale(1.15)}
+
+/* ── Story explanation cards ── */
+.explain-cards{display:flex;flex-direction:column;gap:1.5rem;margin:2rem 0}
+.explain-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;border-left:4px solid var(--gold)}
+.explain-card h4{color:var(--vermillion);font-size:1.1rem;margin-bottom:.5rem}
+.explain-card .meta{font-size:.85rem;color:var(--muted);margin-bottom:.8rem}
+.explain-card .explanation{font-size:.95rem;line-height:1.8;text-align:justify}
+
+/* ── Footer ── */
+footer{text-align:center;padding:3rem 2rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--light);margin-top:4rem}
+
+/* ── Responsive ── */
+@media(max-width:600px){
+  .hero-title{letter-spacing:.2em}
+  .section{padding:2rem 1rem}
+  .carousel-slide{padding:1.5rem;min-height:280px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .bar-label{width:60px;font-size:.75rem}
+  .dimension-list{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="top">
+  <div class="hero-title">酉阳杂俎</div>
+  <div class="hero-subtitle">诺皋记 · 唐代志怪的世界</div>
+  <div style="color:var(--muted);font-size:.95rem;margin-top:1rem">段成式 · 晚唐志怪笔记</div>
+  <div class="hero-arrow" onclick="document.getElementById('overview').scrollIntoView({behavior:'smooth'})">▽</div>
+</section>
+
+<!-- ══════════ OVERVIEW ══════════ -->
+<div class="divider">◆ ◆ ◆</div>
+
+<section class="section reveal" id="overview">
+  <h2>总览</h2>
+
+  <div class="author-card reveal">
+    <div class="author-name">段成式（约803—863）</div>
+    <div class="author-detail">字柯古 · 唐代临淄人 · 太常少卿</div>
+    <p>段成式出身显赫，其父段文昌曾任唐宪宗朝宰相。成式历任集贤殿学士、处州刺史、江州刺史，官至太常少卿。他博闻强记，精通佛典，与李商隐、温庭筠齐名，时称"三十六才子"。</p>
+    <p>关于著书动机，段成式在自序中明言：<em>"固役而不耻者，抑志怪小说之书也"</em>，又道<em>"饱食之暇，偶录记忆"</em>。他在诺皋记卷首写道，因"览历代怪书，偶疏所记"，遂成此编。这表明《酉阳杂俎》是一部自觉的志怪之书，作者以记录者的姿态，广泛收罗鬼神怪异之事。</p>
+    <div class="source-note">据《旧唐书》《新唐书》及段成式自序整理</div>
+  </div>
+
+  <h3>从叙事性与文化史角度进入神怪世界</h3>
+  <div class="direction-box reveal">
+    <p>本网站聚焦《酉阳杂俎》中的神怪描写，尤其是<strong>诺皋记</strong>卷所收录的志怪故事。全书<em class="stat-inline">794段</em>中，<em class="stat-inline">341段（43%）</em>含超自然关键词。诺皋记上下两卷共<em class="stat-inline">65段</em>，其中<em class="stat-inline">44段（68%）</em>涉及神鬼妖魔怪。</p>
+    <div class="dimension-list">
+      <div class="dimension-item">
+        <h4>叙事性维度</h4>
+        <p>每一段志怪故事如何建构其怪异叙事——从起因、变形到结局。段成式笔下的怪异不是目的，而是理解唐代想象力的入口。</p>
+      </div>
+      <div class="dimension-item">
+        <h4>文化史维度</h4>
+        <p>这些故事反映了唐代人怎样的鬼神观念、巫术信仰与文化想象。从灶神官僚体系到形夭舞干戚，从降龙故事到骨珠化人——志怪是理解一个时代精神世界的密码。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STORIES ══════════ -->
+<div class="divider">◆ ◆ ◆</div>
+
+<section class="section reveal" id="stories">
+  <h2>诺皋记 · 五篇</h2>
+  <p style="color:var(--muted);margin-bottom:2rem">诺皋记为《酉阳杂俎》专述鬼神怪异之卷。"诺皋"一名，学界多认为与巫祝禁咒之语有关，段成式自言因"览历代怪书，偶疏所记"而作。以下五篇，各见一种怪异的形与意。</p>
+
+  <!-- Carousel -->
+  <div class="carousel-wrap" id="carousel">
+    <div class="carousel-track" id="carouselTrack"></div>
+    <button class="carousel-btn prev" onclick="slideCarousel(-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="slideCarousel(1)">&#8250;</button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+
+  <!-- Story detail (below carousel) -->
+  <div class="story-detail" id="storyDetail">
+    <div class="story-metadata" id="storyTags"></div>
+    <h3 id="storyTitle" style="color:var(--vermillion)"></h3>
+    <div style="font-size:.85rem;color:var(--muted);margin-bottom:1rem" id="storyVolume"></div>
+    <div class="original-text" id="storyText"></div>
+    <div class="translation-placeholder">
+      <div style="font-size:1.1rem;font-weight:600;margin-bottom:.5rem">译文</div>
+      <div>【待补充】</div>
+    </div>
+    <div class="brief-box" id="storyBrief"></div>
+  </div>
+</section>
+
+<!-- ══════════ DATA ══════════ -->
+<div class="divider">◆ ◆ ◆</div>
+
+<section class="section reveal" id="data">
+  <h2>数据 · 神怪的面孔</h2>
+
+  <div class="stats-grid" id="statsGrid"></div>
+
+  <h3>叙事分类分布</h3>
+  <div class="bar-chart" id="barChart"></div>
+
+  <h3>神怪关键词频次（前20）</h3>
+  <div class="keyword-cloud" id="keywordCloud"></div>
+
+  <h3>五篇故事的分类解读</h3>
+  <div class="explain-cards" id="explainCards"></div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div>数据来源：《酉阳杂俎》初校本 · 分析代码：youyang_analyzer.py</div>
+  <div style="margin-top:.5rem"><a href="https://github.com/MoonRiver-echo/youyang-zazu" target="_blank">GitHub → youyang-zazu</a></div>
+</footer>
+
+<!-- ══════════ JAVASCRIPT ══════════ -->
+<script>
+const EXPLANATIONS = {
+  "V14-P003": "此段归入"异闻志怪"，因描写天山之神帝江的怪异形态——六足重翼、无面目，实为帝江。刑天（原文作「形夭」）与帝争神，被断首葬于常羊山，以乳为目、脐为口、操干戚而舞——这正是《山海经》中著名的刑天神话。关键词"神"标志神灵描写核心。",
+  "V14-P006": "凡人窃天帝之车登天、封白雀为上卿——此段融合神仙志怪与梦境母题，展现道教天界想象。张坚以白雀预警、乘龙升天的叙事结构，是典型的"凡人窃位"母题。关键词"龙"指向乘龙登天的升仙叙事。",
+  "V14-P010": "灶神名隗状如美女——此段详述灶神家族体系与职权，是研究唐代民间信仰的重要材料。灶神"常以月晦日上天白人罪状"的描述，揭示了从家宅神灵到天界官僚的信仰体系。关键词"精""神""天帝"指向精怪与天界官僚体系的交织。",
+  "V14-P014": "龟兹国王降伏毒龙、乘龙而行——此段融合佛教罗汉与本土降龙叙事，展现西域佛教文化与中原志怪传统的交汇。罗汉指出龙居北山、国王持剑降伏的情节，暗示唐代对异域宗教与武力的双重认知。关键词"罗汉""龙"体现佛道融合特色。",
+  "V15-P001": "食鱼吐骨珠化为活人——此段是典型的妖怪变形叙事，骨头→骨珠→骨人→分裂→合体的变形链条极度诡奇。骨珠随视而长、两半人触合成一的描写，表现了唐代志怪中对"身体边界"的想象。关键词"怪"标志妖怪变形母题。"
+};
+
+let storiesData = [];
+let currentSlide = 0;
+let autoAdvanceTimer = null;
+
+// ── Load data ──
+function loadData(){
+  fetch('/api/stories').then(function(resp){ return resp.json(); }).then(function(data){
+    storiesData = data;
+    console.log('Stories loaded:', storiesData.length);
+    renderCarousel();
+    if(storiesData.length > 0) renderStory(0);
+    renderExplanations();
+    startAutoAdvance();
+    setupTouchSwipe();
+  }).catch(function(e){ console.error('Failed to load stories:', e); });
+
+  fetch('/api/stats').then(function(resp){ return resp.json(); }).then(function(stats){
+    console.log('Stats loaded:', Object.keys(stats));
+    renderStats(stats);
+    if(stats.narrative_stats && stats.narrative_stats.length > 0) renderBars(stats.narrative_stats);
+    if(stats.keyword_frequency && stats.keyword_frequency.length > 0) renderKeywords(stats.keyword_frequency.slice(0,20));
+  }).catch(function(e){ console.error('Failed to load stats:', e); });
+}
+
+// ── Carousel ──
+function renderCarousel(){
+  var track = document.getElementById('carouselTrack');
+  var dots = document.getElementById('carouselDots');
+  if(!track || !dots) { console.error('carouselTrack or carouselDots not found'); return; }
+  track.innerHTML = '';
+  dots.innerHTML = '';
+  for(var i = 0; i < storiesData.length; i++){
+    var s = storiesData[i];
+    var slide = document.createElement('div');
+    slide.className = 'carousel-slide slide-bg-' + i;
+    slide.innerHTML = '<div class="slide-mist"></div>' +
+      '<div class="slide-number">' + s.volume_title + ' · 第' + (i+1) + '篇</div>' +
+      '<div class="slide-title">' + s.title + '</div>' +
+      '<div class="slide-type">' + s.monster_type + '</div>' +
+      '<div class="slide-brief">' + s.brief + '</div>' +
+      '<div class="slide-img-placeholder">图片待补充</div>';
+    track.appendChild(slide);
+    var dot = document.createElement('span');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('data-idx', i);
+    dot.onclick = function(){ goToSlide(parseInt(this.getAttribute('data-idx'))); };
+    dots.appendChild(dot);
+  }
+}
+
+function goToSlide(idx){
+  currentSlide = idx;
+  var track = document.getElementById('carouselTrack');
+  track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+  var allDots = document.querySelectorAll('.carousel-dots .dot');
+  for(var i = 0; i < allDots.length; i++){
+    allDots[i].className = 'dot' + (i === idx ? ' active' : '');
+  }
+  renderStory(idx);
+  resetAutoAdvance();
+}
+
+function slideCarousel(dir){
+  var next = currentSlide + dir;
+  if(next < 0) next = storiesData.length - 1;
+  if(next >= storiesData.length) next = 0;
+  goToSlide(next);
+}
+
+function startAutoAdvance(){
+  autoAdvanceTimer = setInterval(function(){ slideCarousel(1); }, 8000);
+}
+
+function resetAutoAdvance(){
+  clearInterval(autoAdvanceTimer);
+  startAutoAdvance();
+}
+
+function setupTouchSwipe(){
+  var el = document.getElementById('carousel');
+  if(!el) return;
+  var startX = 0;
+  el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive: true});
+  el.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 40) slideCarousel(dx > 0 ? -1 : 1);
+  }, {passive: true});
+  el.addEventListener('mouseenter', function(){ clearInterval(autoAdvanceTimer); });
+  el.addEventListener('mouseleave', function(){ startAutoAdvance(); });
+}
+
+// ── Story detail ──
+function renderStory(idx){
+  var s = storiesData[idx];
+  if(!s) return;
+  var titleEl = document.getElementById('storyTitle');
+  var volumeEl = document.getElementById('storyVolume');
+  var tagsEl = document.getElementById('storyTags');
+  var textEl = document.getElementById('storyText');
+  var briefEl = document.getElementById('storyBrief');
+  
+  if(!titleEl || !textEl) { console.error('storyTitle or storyText not found'); return; }
+  
+  titleEl.textContent = s.title;
+  volumeEl.textContent = s.volume_title + ' · ' + s.narrative_category;
+
+  // Tags
+  var tagsHtml = '<span class="story-tag" style="background:rgba(139,37,0,.15);color:var(--vermillion);border:1px solid rgba(139,37,0,.3)">' + s.monster_type + '</span>';
+  var kw = s.shengui_keywords || [];
+  for(var k = 0; k < kw.length; k++){
+    tagsHtml += '<span class="story-tag keyword">' + kw[k] + '</span>';
+  }
+  var th = s.themes || [];
+  for(var t = 0; t < th.length; t++){
+    tagsHtml += '<span class="story-tag theme">' + th[t].broad_category + ' · ' + th[t].level1_subject + ' · ' + th[t].level2_subject + '</span>';
+  }
+  tagsEl.innerHTML = tagsHtml;
+
+  // Annotated text
+  var text = s.annotated_text || s.original_text || '（原文加载中…）';
+  // Build annotations lookup
+  var annMap = {};
+  var annList = s.annotations || [];
+  for(var a = 0; a < annList.length; a++){
+    annMap[annList[a].id] = annList[a].text;
+  }
+  // Replace [n1], [n2] etc. with hoverable annotation spans
+  var annotated = text.replace(/\[n(\d+)\]/g, function(m, num) {
+    var noteId = 'n' + num;
+    var noteText = annMap[noteId];
+    if(noteText){
+      return '<span class="annotation" tabindex="0">' + noteText + '<span class="annotation-tooltip">' + noteText + '</span></span>';
+    }
+    return m;
+  });
+  textEl.innerHTML = annotated;
+
+  // Brief
+  briefEl.innerHTML = '<strong>\u6BB5\u843D\u6982\u62EC\uFF1A</strong>' + s.brief;
+}
+
+function goToSlide(idx){
+  currentSlide = idx;
+  const track = document.getElementById('carouselTrack');
+  track.style.transform = `translateX(-${idx*100}%)`;
+  document.querySelectorAll('.carousel-dots .dot').forEach((d,i)=> d.classList.toggle('active', i===idx));
+  renderStory(idx);
+  resetAutoAdvance();
+}
+
+function slideCarousel(dir){
+  let next = currentSlide + dir;
+  if(next < 0) next = storiesData.length - 1;
+  if(next >= storiesData.length) next = 0;
+  goToSlide(next);
+}
+
+function startAutoAdvance(){
+  autoAdvanceTimer = setInterval(()=>{
+    slideCarousel(1);
+  }, 8000);
+}
+
+function resetAutoAdvance(){
+  clearInterval(autoAdvanceTimer);
+  startAutoAdvance();
+}
+
+function setupTouchSwipe(){
+  const el = document.getElementById('carousel');
+  let startX = 0;
+  el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+  el.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 40) slideCarousel(dx > 0 ? -1 : 1);
+  });
+  el.addEventListener('mouseenter', () => clearInterval(autoAdvanceTimer));
+  el.addEventListener('mouseleave', () => startAutoAdvance());
+}
+
+// ── Story detail ──
+function renderStory(idx){
+  const s = storiesData[idx];
+  if(!s) return;
+  document.getElementById('storyTitle').textContent = s.title;
+  document.getElementById('storyVolume').textContent = `${s.volume_title} · ${s.narrative_category}`;
+
+  // Tags
+  const tagsEl = document.getElementById('storyTags');
+  let tagsHtml = `<span class="story-tag" style="background:rgba(139,37,0,.15);color:var(--vermillion);border:1px solid rgba(139,37,0,.3)">${s.monster_type}</span>`;
+  (s.shengui_keywords||[]).forEach(k => {
+    tagsHtml += `<span class="story-tag keyword">${k}</span>`;
+  });
+  (s.themes||[]).forEach(t => {
+    tagsHtml += `<span class="story-tag theme">${t.broad_category} · ${t.level1_subject} · ${t.level2_subject}</span>`;
+  });
+  tagsEl.innerHTML = tagsHtml;
+
+// Annotated text - render original text with annotation markers as hoverable
+  const textEl = document.getElementById('storyText');
+  const text = s.annotated_text || s.original_text || '';
+  if(!text) {
+    textEl.innerHTML = '<p style="color:var(--muted)">（原文加载中…）</p>';
+  } else {
+    // Convert [n1], [n2] etc. annotation markers to hoverable spans
+    const annotated = text.replace(/\[n(\d+)\]/g, function(m, num) {
+      const note = (s.annotations||[]).find(function(a){ return a.id === 'n'+num; });
+      if(note){
+        return '<span class="annotation" data-note-id="' + note.id + '">' + note.text + '</span>';
+      }
+      return m;
+    });
+    textEl.innerHTML = annotated;
+    
+    // Add hover behavior to annotations
+    textEl.querySelectorAll('.annotation').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        const tip = el.querySelector('.annotation-tooltip');
+        if(tip) tip.style.display = 'block';
+      });
+      el.addEventListener('mouseleave', function() {
+        const tip = el.querySelector('.annotation-tooltip');
+        if(tip) tip.style.display = 'none';
+      });
+    });
+  }
+
+  // Brief
+  document.getElementById('storyBrief').innerHTML = `<strong>段落概括：</strong>${s.brief}`;
+}
+
+// ── Stats ──
+function renderStats(stats){
+  var grid = document.getElementById('statsGrid');
+  if(!grid) return;
+  var total_p = stats.total_paragraphs || 794;
+  var total_s = stats.total_shengui_paragraphs || 341;
+  var nuogao_t = stats.nuogao_total || 65;
+  var nuogao_s = stats.nuogao_shengui || 44;
+  var items = [
+    {label:'\u5168\u4E66\u6BB5\u843D', value: total_p},
+    {label:'\u542B\u8D85\u81EA\u7136\u5173\u952E\u8BCD', value: total_s + '\u6BB5 (' + Math.round(total_s/total_p*100) + '%)'},
+    {label:'\u8BFA\u7694\u8BB0 / \u795E\u602A\u76F8\u5173', value: nuogao_t + '\u6BB5 / ' + nuogao_s + '\u6BB5 (' + Math.round(nuogao_s/nuogao_t*100) + '%)'},
+    {label:'\u795E\u602A\u5996\u9B45\u7C7B\u5B50\u7C7B', value:'14'}
+  ];
+  var html = '';
+  for(var i = 0; i < items.length; i++){
+    html += '<div class="stat-card"><div class="stat-number">' + items[i].value + '</div><div class="stat-label">' + items[i].label + '</div></div>';
+  }
+  grid.innerHTML = html;
+}
+
+function renderBars(narrativeStats){
+  if(!narrativeStats || narrativeStats.length === 0) return;
+  var chart = document.getElementById('barChart');
+  if(!chart) return;
+  var maxVal = 0;
+  for(var i = 0; i < narrativeStats.length; i++){
+    if(narrativeStats[i].paragraph_count > maxVal) maxVal = narrativeStats[i].paragraph_count;
+  }
+  if(maxVal <= 0) return;
+  var highlight = '\u5F02\u95FB\u5FD7\u602A';
+  var html = '';
+  for(var i = 0; i < narrativeStats.length; i++){
+    var n = narrativeStats[i];
+    var pct = (n.paragraph_count / maxVal * 100).toFixed(1);
+    var isHL = (n.narrative_category === highlight);
+    var barColor = isHL ? '' : 'linear-gradient(90deg,#5b7e5b,#8ba88b)';
+    html += '<div class="bar-row">';
+    html += '<div class="bar-label">' + n.narrative_category + '</div>';
+    html += '<div class="bar-track"><div class="bar-fill' + (isHL ? ' highlight' : '') + '" style="width:' + pct + '%;' + (isHL ? '' : 'background:' + barColor) + '"></div></div>';
+    html += '<div class="bar-value">' + n.paragraph_count + '\u6BB5</div>';
+    html += '</div>';
+  }
+  chart.innerHTML = html;
+}
+
+function renderKeywords(keywords){
+  if(!keywords || keywords.length === 0) return;
+  var cloud = document.getElementById('keywordCloud');
+  if(!cloud) return;
+  var maxCount = 0;
+  for(var i = 0; i < keywords.length; i++){
+    if(keywords[i].count > maxCount) maxCount = keywords[i].count;
+  }
+  if(maxCount <= 0) return;
+  var html = '';
+  for(var i = 0; i < keywords.length; i++){
+    var k = keywords[i];
+    var ratio = k.count / maxCount;
+    var size = Math.max(12, Math.round(ratio * 32 + 12));
+    var opacity = Math.max(0.4, ratio);
+    html += '<span class="keyword-bubble" style="font-size:' + size + 'px;width:' + (size*2.5) + 'px;height:' + (size*2.5) + 'px;background:rgba(139,37,0,' + (opacity*0.15) + ');padding:' + (size*0.4) + 'px" title="' + k.keyword + ': ' + k.count + '\u6B21">' + k.keyword + '</span>';
+  }
+  cloud.innerHTML = html;
+}
+
+function renderExplanations(){
+  var container = document.getElementById('explainCards');
+  if(!container) return;
+  var html = '';
+  for(var i = 0; i < storiesData.length; i++){
+    var s = storiesData[i];
+    var exp = EXPLANATIONS[s.pid] || '\u6682\u65E0\u89E3\u8BFB';
+    html += '<div class="explain-card">';
+    html += '<h4>' + s.title + '</h4>';
+    html += '<div class="meta">' + s.volume_title + ' \xB7 ' + s.narrative_category + ' \xB7 \u5173\u952E\u8BCD: ' + (s.shengui_keywords||[]).join('\u3001') + '</div>';
+    html += '<div class="explanation">' + exp + '</div>';
+    html += '</div>';
+  }
+  container.innerHTML = html;
+}
+
+function renderBars(narrativeStats){
+  if(!narrativeStats || narrativeStats.length === 0) return;
+  const chart = document.getElementById('barChart');
+  const max = Math.max(...narrativeStats.map(n => n.paragraph_count));
+  if(max <= 0) return;
+  const highlight = '异闻志怪';
+  chart.innerHTML = narrativeStats.map(n => {
+    const pct = (n.paragraph_count / max * 100).toFixed(1);
+    const isHighlight = n.narrative_category === highlight;
+    return `<div class="bar-row">
+      <div class="bar-label">${n.narrative_category}</div>
+      <div class="bar-track"><div class="bar-fill ${isHighlight?'highlight':''}" style="width:${pct}%;background:${isHighlight?'':'linear-gradient(90deg,#5b7e5b,#8ba88b)'}"></div></div>
+      <div class="bar-value">${n.paragraph_count}段</div>
+    </div>`;
+  }).join('');
+}
+
+function renderKeywords(keywords){
+  if(!keywords || keywords.length === 0) return;
+  const cloud = document.getElementById('keywordCloud');
+  const maxCount = Math.max(...keywords.map(k => k.count));
+  if(maxCount <= 0) return;
+  cloud.innerHTML = keywords.map(k => {
+    const ratio = k.count / maxCount;
+    const size = Math.max(12, Math.round(ratio * 32 + 12));
+    const opacity = Math.max(0.4, ratio);
+    return `<span class="keyword-bubble" style="font-size:${size}px;width:${size*2.5}px;height:${size*2.5}px;background:rgba(139,37,0,${opacity*0.15});padding:${size*0.4}px" title="${k.keyword}: ${k.count}次">${k.keyword}</span>`;
+  }).join('');
+}
+
+function renderExplanations(){
+  const container = document.getElementById('explainCards');
+  container.innerHTML = storiesData.map(s => {
+    const exp = EXPLANATIONS[s.pid] || '暂无解读';
+    return `<div class="explain-card">
+      <h4>${s.title}</h4>
+      <div class="meta">${s.volume_title} · ${s.narrative_category} · 关键词: ${(s.shengui_keywords||[]).join('、')}</div>
+      <div class="explanation">${exp}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── IntersectionObserver ──
+try {
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Fallback: show all reveal sections after 2 seconds regardless
+  setTimeout(()=>{
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }, 2000);
+} catch(e) {
+  // If IntersectionObserver fails, just show everything
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+
+// ── Init ──
+document.addEventListener('DOMContentLoaded', function() {
+  loadData();
+  // Fallback: ensure all reveal elements are visible after load
+  setTimeout(function(){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+  }, 1000);
+});
+</script>
+</body>
+</html>

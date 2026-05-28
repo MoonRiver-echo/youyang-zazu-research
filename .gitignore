@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Office temp files
+~$*
+*.tmp
+~WRL*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large media (keep images for the website, but exclude raw DJVU)
+*.djvu
+
+# Sisyphus temp
+.sisyphus/
+
+# Node modules (if any)
+node_modules/
+
+# Log files
+*.log
+
+# Personal debug outputs (too many individual debug files)
+# But keep key scripts and data
+
+# Large binary files (exceed GitHub 100MB limit)
+references/*.pdf
+*.caj
+*.epub

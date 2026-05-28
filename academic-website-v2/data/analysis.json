@@ -1,0 +1,26 @@
+{
+  "project": "《酉阳杂俎》志怪叙事文本的文化特征与晚唐文化史研究",
+  "subtitle": "以《诺皋记》、《支诺皋》为例",
+  "total_narrative_texts": 95,
+  "total_entries_nuogao": 147,
+  "classification": [
+    {"category": "变化", "count": 23, "percentage": 24.2, "core": "以'形变'为核心，强调人与异类之间的转换变化", "subtypes": ["人变为异类或升格", "异类现原形或消散", "画与人的双向互动"]},
+    {"category": "遭遇", "count": 18, "percentage": 18.9, "core": "以'人与异类正面相遇'为核心，强调'遭遇'这一过程本身", "subtypes": ["敌对关系", "共存关系"]},
+    {"category": "梦", "count": 7, "percentage": 7.4, "core": "以'梦中经历'为核心，梦在叙述中起到的是传递信息的作用", "subtypes": []},
+    {"category": "冥界", "count": 6, "percentage": 6.3, "core": "以'阳间之人接触冥司'为核心，表现为两种制度的交互", "subtypes": []},
+    {"category": "预兆", "count": 9, "percentage": 9.5, "core": "以'先兆与应验'为核心，往往表现为延后应验", "subtypes": []},
+    {"category": "因果", "count": 4, "percentage": 4.2, "core": "以'行为的后果'为核心，情节之间有明显的因果关系连接", "subtypes": []},
+    {"category": "禁忌", "count": 3, "percentage": 3.2, "core": "以'触犯规则的后果'为核心，对象往往是某种奇物", "subtypes": []},
+    {"category": "异境", "count": 5, "percentage": 5.3, "core": "以'进入异空间'为核心，异空间与正常空间以水、洞等相连", "subtypes": []},
+    {"category": "遇鬼", "count": 4, "percentage": 4.2, "core": "以'直接遭遇鬼魂'为核心，往往描述与鬼的互动", "subtypes": []},
+    {"category": "物怪", "count": 7, "percentage": 7.4, "core": "围绕奇异物展开，物怪通常不具有意识", "subtypes": []},
+    {"category": "病治", "count": 4, "percentage": 4.2, "core": "以'超自然的疾病'为核心，情节集中在致病和治病上", "subtypes": []},
+    {"category": "术法", "count": 5, "percentage": 5.3, "core": "以'降伏妖魔'为核心，主人公多为道士、僧人", "subtypes": []}
+  ],
+  "database": {
+    "file": "youyang_zazu.db",
+    "tables": ["paragraphs", "shengui", "description_subjects", "theme_details", "narrative_stats", "monster_type_stats", "theme_frequency"],
+    "total_paragraphs": 1257,
+    "supernatural_paragraphs": 426
+  }
+}

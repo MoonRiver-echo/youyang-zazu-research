@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《酉阳杂俎》志怪叙事文本的文化特征与晚唐文化史研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-left">
+      <span class="project-badge">学术研究</span>
+      <span>唐代志怪笔记文献数字化研究</span>
+    </div>
+    <div class="top-bar-right">
+      <a href="data/youyang_zazu.db" download>SQLite数据库</a>
+      <a href="data/analysis.json" download>JSON数据</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="site-logo-title">酉阳杂俎研究</span>
+      <span class="site-logo-sub">志怪叙事与晚唐文化史</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-item active">首页</a>
+      <a href="framework.html" class="nav-item">研究框架</a>
+      <a href="analysis.html" class="nav-item">文本分析</a>
+      <a href="visualization.html" class="nav-item">数据可视化</a>
+      <a href="bibliography.html" class="nav-item">参考文献</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">导航</div>
+      <ul class="sidebar-nav">
+        <li><a href="#abstract" class="active">内容提要</a></li>
+        <li><a href="#problem">问题意识</a></li>
+        <li><a href="#method">方法论</a></li>
+        <li><a href="#structure">研究结构</a></li>
+        <li><a href="#database">数据库</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">数据下载</div>
+      <div class="data-downloads">
+        <a href="data/youyang_zazu.db" download class="download-btn">
+          <span class="icon">🗄️</span><span>SQLite数据库 (.db)</span>
+        </a>
+        <a href="data/analysis.json" download class="download-btn">
+          <span class="icon">📊</span><span>分析数据 (JSON)</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-title-block">
+      <h1 class="page-title">《酉阳杂俎》志怪叙事文本的文化特征与晚唐文化史研究</h1>
+      <p class="page-subtitle">——以《诺皋记》、《支诺皋》为例</p>
+      <div class="page-meta">
+        <span>研究对象：段成式《酉阳杂俎·诺皋》五篇</span>
+        <span>叙事文本：95条</span>
+        <span>分类体系：12类</span>
+      </div>
+    </div>
+
+    <section id="abstract" class="content-section">
+      <h2>内容提要</h2>
+      <p>《酉阳杂俎》成书于晚唐，作者段成式（约803—863），全书二十卷、三十篇。其中《诺皋》五篇——《诺皋记上》、《诺皋记下》、《支诺皋上》、《支诺皋中》、《支诺皋下》——是书中记叙志怪故事的翘楚，被后世推为"小说之翘楚"。李剑国指出："成式首倡'志怪小说'一词"，并点评"《天咫》、《玉格》、《壶史》、《盗侠》之属固已以幻丽见长，而《诺皋》五篇尤称佳制。"</p>
+      <p>本研究以《诺皋》五篇中的叙事文本为核心研究对象，探讨其文化特征与晚唐文化史之间的关系。在147条文本中，依据叙事文本的定义——"叙事文本应该是一个故事性的文本，它具有情节、叙述者、叙事结构等层级，它的内部串联了一个及以上的事件"——筛选出95条具有叙事价值的文本，并将其分为12类：变化、遭遇、梦、冥界、预兆、因果、禁忌、异境、遇鬼、物怪、病治、术法。</p>
+      <p>研究从叙事学视角出发，关注三个核心特征：（1）"异"与"常"的二元对立关系；（2）事件之间的叙事空白；（3）真实可靠的叙述者。通过对这些叙事特征的考察，揭示晚唐时期社会文化的世俗化倾向、三教合流态势，以及士人面对生死无常时的文化心理。</p>
+    </section>
+
+    <section id="problem" class="content-section">
+      <h2>问题意识</h2>
+      <p>回顾《酉阳杂俎》研究，大体可分为三个方向：其一，对跨文本中的异文现象进行分析与研究；其二，版本考校，以方南生、潘建国等人的研究为首；其三，叙事学特征与文化传统研究，如赖春桃对游仙故事的研究、杭心仪对叙事空白现象的研究，以及《支诺皋·叶限》与《灰姑娘》的比较等。</p>
+      <p>这些研究或受限于篇章，或受限于技术，往往选取其中具有代表性的一个或几个故事进行小范围论述，很少连缀成篇。基于这一研究现状，本研究尝试通过数字化文本并将其分类的方式，以可视化的方式让数据客观、直接地进行比较，使研究者能够直观地体会到该书的叙事特征与文化史意义。</p>
+      <p>新文化史理论认为，对文化史的研究无法完全离开文学理论而进行。勒内·韦勒克指出，"文学显然可以代替许多东西——代替在国外旅行或羁留；代替直接的经验和想像的生活；还可以被历史家当作一种社会文献来使用。"文学作品作为社会文化的重要组成部分，是反映社会文化的关键组件之一。基于此，本研究试图回答：段成式笔下的志怪叙事，如何通过"异"与"常"的二元对立结构、叙事空白与真实叙述者等叙事策略，折射晚唐社会的文化特征与士人心态？</p>
+    </section>
+
+    <section id="method" class="content-section">
+      <h2>方法论</h2>
+      <h3>文本数字化与分类</h3>
+      <p>本研究的数据部分需要解决三个问题：第一，清洗生文本，以形成可靠的原始文本；第二，对文本进行精确分类，并选出符合研究需要的文本和类别；第三，数据可视化与平台构建。</p>
+      <p>由于原始文本以文言文写成，且中文语义多样性极大影响判断，因此需要两个前置条件：可供参考的具有高信度的注释文本，以及高度清晰且可执行的分类逻辑。通过撰写Skills文档，将问题拆解为四个任务：</p>
+      <ol>
+        <li>将两份经过OCR处理的生文本进行比较，重合部分视为"真文本"；</li>
+        <li>区分"真文本"与注释，分别生成真文本文档和注释文档；</li>
+        <li>参考注释文档，对真文本文档进行分段；</li>
+        <li>依据叙事结构和描写对象进行分类，提供分类细则（分类逻辑、类目、分类目标、案例与输出结果）。</li>
+      </ol>
+      <p>面对叙事文本的筛选，通过给定定义和案例的方式要求LLM进行筛选，并对筛选出的文本进行二次分类。最终在147个文本中筛选出95个有价值的叙事文本，并分为12类。</p>
+
+      <h3>叙事学分析框架</h3>
+      <p>研究综合采用普罗普的功能分析与丁乃通的民间故事类型索引方法，结合结构主义叙事学的二元对立理论、文本时间与故事时间的比较分析，以及叙述者可靠性理论，对《诺皋》五篇的叙事文本进行系统性分析。</p>
+    </section>
+
+    <section id="structure" class="content-section">
+      <h2>研究结构</h2>
+      <p>本研究分为五个相互关联的模块：</p>
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead><tr><th>模块</th><th>研究问题</th><th>分析方法</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>研究框架</strong></td>
+              <td>叙事文本如何定义？12类分类体系如何建立？</td>
+              <td>叙事学定义、普罗普功能分析、丁乃通类型索引</td>
+            </tr>
+            <tr>
+              <td><strong>文本分析</strong></td>
+              <td>"异"/"常"二元对立、叙事空白、叙述者可靠性如何体现？</td>
+              <td>结构主义叙事学、文本细读</td>
+            </tr>
+            <tr>
+              <td><strong>类型比较</strong></td>
+              <td>"变化"类与"遭遇"类的内部差异？"梦"类与"预兆"类的外部关联？</td>
+              <td>类型学比较、历时性与共时性分析</td>
+            </tr>
+            <tr>
+              <td><strong>文化史阐释</strong></td>
+              <td>叙事特征如何反映晚唐文化的世俗化、三教合流与现世关怀？</td>
+              <td>新文化史理论、文史互证</td>
+            </tr>
+            <tr>
+              <td><strong>数据可视化</strong></td>
+              <td>12类文本的分布规律如何？</td>
+              <td>频次统计、柱状图</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="database" class="content-section">
+      <h2>数据库</h2>
+      <p>本研究基于数字化处理后的文本建立了SQLite关系型数据库，包含以下数据表：</p>
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead><tr><th>表名</th><th>说明</th><th>记录数</th></tr></thead>
+          <tbody>
+            <tr><td>paragraphs</td><td>全文段落表，含卷目、叙事类别、文本内容</td><td class="num">1,257</td></tr>
+            <tr><td>shengui</td><td>神怪条目表，含妖怪类型、叙事主题、关键词</td><td class="num">426</td></tr>
+            <tr><td>description_subjects</td><td>描写对象表</td><td class="num">1,721</td></tr>
+            <tr><td>theme_details</td><td>主题详情表，含一级分类、具体主题、关键词</td><td class="num">6,556</td></tr>
+            <tr><td>narrative_stats</td><td>叙事类别统计表</td><td class="num">25</td></tr>
+            <tr><td>monster_type_stats</td><td>妖怪类型统计表</td><td class="num">11</td></tr>
+            <tr><td>theme_frequency</td><td>主题频次统计表</td><td class="num">44</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="annotation">
+        <div class="annotation-title">数据库使用说明</div>
+        <p>本数据库以开放学术资源形式提供，研究者可自由下载、引用与扩展。数据库采用SQLite格式，可使用DB Browser for SQLite、Python sqlite3模块等工具打开。引用本数据集时请注明来源。</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">酉阳杂俎研究</span>
+      <p>志怪叙事文本的文化特征与晚唐文化史</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">首页</a>
+      <a href="framework.html">研究框架</a>
+      <a href="analysis.html">文本分析</a>
+      <a href="visualization.html">数据可视化</a>
+      <a href="bibliography.html">参考文献</a>
+    </div>
+    <div class="footer-credit">学术研究网站</div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+{
+  "project": "《酉阳杂俎》志怪叙事文本的文化特征与晚唐文化史研究——以《诺皋记》、《支诺皋》为例",
+  "source": {
+    "total_entries_nuogao": 147,
+    "narrative_texts_selected": 95,
+    "selection_rate": "64.6%"
+  },
+  "classification": {
+    "method": "基于核心情节类型进行单一归类，以普罗普功能理论和丁乃通故事类型索引为参照",
+    "categories": [
+      {
+        "id": "bianhua",
+        "name": "变化",
+        "count": 23,
+        "percentage": 24.2,
+        "core_plot": "以'形变'为核心，强调人与异类之间的转换变化",
+        "subtypes": [
+          {"name": "人变为异类或升格", "description": "人主动或被动转化为异类"},
+          {"name": "异类现原形或消散", "description": "异类在特定条件下显露真身或消失"},
+          {"name": "画与人的双向互动", "description": "画中世界与现实世界的交互"}
+        ],
+        "examples_in_thesis": ["虢州五城县黑鱼谷", "妒妇津"]
+      },
+      {
+        "id": "zouyu",
+        "name": "遭遇",
+        "count": 18,
+        "percentage": 18.9,
+        "core_plot": "以'人与异类正面相遇'为核心，强调'遭遇'这一过程本身",
+        "subtypes": [
+          {"name": "敌对关系", "description": "人与异类之间存在冲突或伤害"},
+          {"name": "共存关系", "description": "人与异类之间关系不尖锐，可暂时共处"}
+        ],
+        "examples_in_thesis": ["郭代公", "望苑驿西有百姓王申"]
+      },
+      {
+        "id": "meng",
+        "name": "梦",
+        "count": 7,
+        "percentage": 7.4,
+        "core_plot": "以'梦中经历'为核心，梦在叙述中起到传递信息的作用",
+        "narrative_structure": "入梦—梦中事件—梦觉验证",
+        "examples_in_thesis": ["复州医人王超", "李正己"]
+      },
+      {
+        "id": "mingjie",
+        "name": "冥界",
+        "count": 6,
+        "percentage": 6.3,
+        "core_plot": "以'阳间之人接触冥司'为核心，表现为两种制度的交互",
+        "examples_in_thesis": ["王乙掘井"]
+      },
+      {
+        "id": "yuzhao",
+        "name": "预兆",
+        "count": 9,
+        "percentage": 9.5,
+        "core_plot": "以'先兆与应验'为核心，往往表现为延后应验",
+        "comparison_with_dream": "预兆的故事时间往往较长，先兆是现实中被发现的，而非只有当事人知道",
+        "examples_in_thesis": ["成都乞儿严七师"]
+      },
+      {
+        "id": "yinguo",
+        "name": "因果",
+        "count": 4,
+        "percentage": 4.2,
+        "core_plot": "以'行为的后果'为核心，情节之间有明显的因果关系连接",
+        "examples_in_thesis": ["王清"]
+      },
+      {
+        "id": "jinji",
+        "name": "禁忌",
+        "count": 3,
+        "percentage": 3.2,
+        "core_plot": "以'触犯规则的后果'为核心，对象往往是某种奇物",
+        "examples_in_thesis": []
+      },
+      {
+        "id": "yijing",
+        "name": "异境",
+        "count": 5,
+        "percentage": 5.3,
+        "core_plot": "以'进入异空间'为核心，异空间与正常空间以水、洞等相连",
+        "examples_in_thesis": ["长须国", "成都坊正张和"]
+      },
+      {
+        "id": "yugui",
+        "name": "遇鬼",
+        "count": 4,
+        "percentage": 4.2,
+        "core_plot": "以'直接遭遇鬼魂'为核心，往往描述与鬼的互动",
+        "examples_in_thesis": []
+      },
+      {
+        "id": "wuguai",
+        "name": "物怪",
+        "count": 7,
+        "percentage": 7.4,
+        "core_plot": "围绕起义物品展开，物怪通常不具有意识",
+        "examples_in_thesis": ["和州刘录事者", "冯坦"]
+      },
+      {
+        "id": "bingzhi",
+        "name": "病治",
+        "count": 4,
+        "percentage": 4.2,
+        "core_plot": "以'超自然的疾病'为核心，情节集中在致病和治病上",
+        "examples_in_thesis": []
+      },
+      {
+        "id": "shufa",
+        "name": "术法",
+        "count": 5,
+        "percentage": 5.3,
+        "core_plot": "以'降伏妖魔'为核心，主人公多为道士、僧人",
+        "examples_in_thesis": ["智通", "荆南松滋县南"]
+      }
+    ]
+  },
+  "theoretical_framework": {
+    "binary_opposition": {
+      "concept": "异/常二元对立",
+      "description": "'异'作为他者，'常'作为我者；志怪叙述通过'导异为常'平衡二者关系"
+    },
+    "narrative_gaps": {
+      "types": ["时间空白", "环境空白"],
+      "description": "故事时间大于0而文本篇幅等于0的叙事现象，以及作者有意隐瞒导致读者需自行填补的空白"
+    },
+    "narrator": {
+      "type": "真实可靠的叙述者",
+      "description": "段成式本人为真实叙述者，通过介绍主人公与作者的关系、明确的时间地点坐标增强可信度"
+    }
+  },
+  "cultural_history_findings": {
+    "secularization": {
+      "temporal": "仙境与凡间的时间几乎同步，进入仙境的故事时间极大缩短",
+      "spatial": "进入异空间的方式日常生活化，距离显著缩短",
+      "character": "神仙、冥界使者具有人性化缺点；精怪未必可怕，有些比人更单纯"
+    },
+    "three_religions": "儒释道融合：冥界和死而复生（道教）、生死簿观念（佛教）、人物塑造（儒家）",
+    "mortality": "死而复生母题多于转世轮回，体现关注现世的人本主义转向",
+    "money_concept": "对金钱的关注反映晚唐普通人对现实生活的担忧"
+  },
+  "database": {
+    "description": "本研究通过数字化文本处理，对《酉阳杂俎·诺皋》五篇进行清洗、分段、分类，最终建立SQLite数据库",
+    "tables": [
+      {"name": "narrative_texts", "description": "95条叙事文本的基本信息（编号、原文、出处卷目）"},
+      {"name": "categories", "description": "12类分类体系及定义"},
+      {"name": "text_category", "description": "文本与分类的对应关系（一对一）"},
+      {"name": "annotations", "description": "文本的现代汉语注释"}
+    ],
+    "download_format": "JSON",
+    "notes": "本数据集严格基于论文中的分类结果构建，仅供学术研究使用"
+  }
+}

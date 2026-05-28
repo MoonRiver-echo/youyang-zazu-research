@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数据库 · 酉阳杂俎研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/academic.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-left">
+      <span class="project-badge">数字人文项目</span>
+      <span>唐代志怪笔记文献数字化研究</span>
+    </div>
+    <div class="top-bar-right">
+      <a href="database.html">数据库</a>
+      <a href="data/thesis_data.json" download>JSON数据</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="site-logo-title">酉阳杂俎研究</span>
+      <span class="site-logo-sub">志怪叙事与晚唐文化史</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-item">首页</a>
+      <a href="framework.html" class="nav-item">研究框架</a>
+      <a href="text-analysis.html" class="nav-item">文本分析</a>
+      <a href="data-visualization.html" class="nav-item">数据可视化</a>
+      <a href="database.html" class="nav-item active">数据库</a>
+      <a href="bibliography.html" class="nav-item">参考文献</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">数据库</div>
+      <ul class="sidebar-nav">
+        <li><a href="#overview" class="active">概述</a></li>
+        <li><a href="#structure">表结构</a></li>
+        <li><a href="#download">数据下载</a></li>
+        <li><a href="#usage">使用说明</a></li>
+        <li><a href="#sample">样例数据</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-title">数据资源</div>
+      <div class="data-downloads">
+        <a href="data/thesis_data.json" download class="download-btn">
+          <span class="icon">📊</span><span>论文数据集 (JSON)</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-title-block">
+      <h1 class="page-title">数据库</h1>
+      <p class="page-subtitle">《酉阳杂俎·诺皋》五篇数字化文本与分类数据</p>
+    </div>
+
+    <section id="overview" class="content-section">
+      <h2>概述</h2>
+      <p>本研究对《酉阳杂俎·诺皋》五篇（《诺皋记上》《诺皋记下》《支诺皋上》《支诺皋中》《支诺皋下》）进行了数字化文本处理。原始数据来源于两份经过OCR处理的生文本，通过比对去重、真文本与注释分离、分段处理、分类标注四个步骤，最终建立了结构化的SQLite数据库。</p>
+      <p>数据库包含以下核心内容：</p>
+      <ul>
+        <li><strong>叙事文本表</strong>：95条符合叙事文本定义的记录，包含原文、出处卷目、现代汉语注释</li>
+        <li><strong>分类体系表</strong>：12类核心情节的定义、说明与统计</li>
+        <li><strong>文本分类对应表</strong>：95条文本与12类分类之间的一对一对应关系</li>
+        <li><strong>注释表</strong>：文本的现代汉语注释，辅助理解原文语义</li>
+      </ul>
+      <p>本数据集以开放JSON格式提供下载，便于后续研究者复用、验证与扩展。</p>
+    </section>
+
+    <section id="structure" class="content-section">
+      <h2>数据库表结构</h2>
+      <h3>表一：narrative_texts（叙事文本）</h3>
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead><tr><th>字段名</th><th>类型</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>id</td><td>INTEGER</td><td>主键，自增</td></tr>
+            <tr><td>text_id</td><td>TEXT</td><td>文本编号，如"NGS_001"</td></tr>
+            <tr><td>source_volume</td><td>TEXT</td><td>出处卷目，如"诺皋记上"</td></tr>
+            <tr><td>original_text</td><td>TEXT</td><td>文言文原文</td></tr>
+            <tr><td>annotation</td><td>TEXT</td><td>现代汉语注释</td></tr>
+            <tr><td>is_narrative</td><td>BOOLEAN</td><td>是否为叙事文本（1=是，0=否）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>表二：categories（分类体系）</h3>
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead><tr><th>字段名</th><th>类型</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>id</td><td>INTEGER</td><td>主键，自增</td></tr>
+            <tr><td>category_id</td><td>TEXT</td><td>分类标识，如"bianhua"</td></tr>
+            <tr><td>category_name</td><td>TEXT</td><td>分类名称，如"变化"</td></tr>
+            <tr><td>core_plot</td><td>TEXT</td><td>核心情节定义</td></tr>
+            <tr><td>count</td><td>INTEGER</td><td>该类别包含的文本数量</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>表三：text_category（文本分类对应）</h3>
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead><tr><th>字段名</th><th>类型</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>id</td><td>INTEGER</td><td>主键，自增</td></tr>
+            <tr><td>text_id</td><td>TEXT</td><td>文本编号，关联narrative_texts</td></tr>
+            <tr><td>category_id</td><td>TEXT</td><td>分类标识，关联categories</td></tr>
+            <tr><td>plot_summary</td><td>TEXT</td><td>情节概括（去除描述性语言的简洁情节连接）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>表四：annotations（注释表）</h3>
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead><tr><th>字段名</th><th>类型</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>id</td><td>INTEGER</td><td>主键，自增</td></tr>
+            <tr><td>text_id</td><td>TEXT</td><td>文本编号，关联narrative_texts</td></tr>
+            <tr><td>annotation_text</td><td>TEXT</td><td>注释内容</td></tr>
+            <tr><td>source</td><td>TEXT</td><td>注释来源（如许逸民校本）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="download" class="content-section">
+      <h2>数据下载</h2>
+      <p>本研究数据以JSON格式开放下载，包含论文中使用的全部分类统计、分类定义及典型案例信息。</p>
+      <div class="data-downloads" style="margin-top:20px">
+        <a href="data/thesis_data.json" download class="download-btn">
+          <span class="icon">📊</span>
+          <span>论文数据集 (JSON)</span>
+        </a>
+      </div>
+      <h3>数据集内容说明</h3>
+      <pre><code>{
+  "project": "项目名称",
+  "source": {
+    "total_entries_nuogao": 147,
+    "narrative_texts_selected": 95,
+    "selection_rate": "64.6%"
+  },
+  "classification": {
+    "method": "分类方法说明",
+    "categories": [
+      {
+        "id": "分类标识",
+        "name": "分类名称",
+        "count": 段落数,
+        "percentage": 百分比,
+        "core_plot": "核心情节定义",
+        "subtypes": [子类型列表],
+        "examples_in_thesis": [论文中引用的案例]
+      }
+    ]
+  },
+  "theoretical_framework": {
+    "binary_opposition": { "概念": "...", "description": "..." },
+    "narrative_gaps": { "types": ["..."], "description": "..." },
+    "narrator": { "type": "...", "description": "..." }
+  },
+  "cultural_history_findings": {
+    "secularization": { "temporal": "...", "spatial": "...", "character": "..." },
+    "three_religions": "...",
+    "mortality": "...",
+    "money_concept": "..."
+  }
+}</code></pre>
+    </section>
+
+    <section id="usage" class="content-section">
+      <h2>使用说明</h2>
+      <h3>引用格式</h3>
+      <p>引用本数据集时，请注明以下信息：</p>
+      <blockquote>
+        <p>《酉阳杂俎·诺皋》五篇叙事文本分类数据集，数字人文项目，2026年5月。数据涵盖《诺皋记上》《诺皋记下》《支诺皋上》《支诺皋中》《支诺皋下》五篇中筛选出的95条叙事文本，按核心情节分为12类。</p>
+      </blockquote>
+
+      <h3>数据限制</h3>
+      <ul>
+        <li>本数据集仅涵盖《诺皋》五篇中符合叙事文本定义的95条文本，未包含全部147条原文。</li>
+        <li>分类采用单一归类原则，即每条文本仅归入一个类别。当文本包含多个情节时，以最重要的情节为归类依据。</li>
+        <li>分类过程基于人工判断，不可避免地带有研究者的主观理解。</li>
+        <li>数据集中的文本原文来源于OCR处理后的生文本，可能存在少量识别错误。</li>
+      </ul>
+
+      <h3>扩展建议</h3>
+      <p>后续研究者可以在此基础上进行以下扩展：</p>
+      <ul>
+        <li>将分类范围从《诺皋》五篇扩展至《酉阳杂俎》全书二十卷</li>
+        <li>引入叙事结构的更细粒度标注（如普罗普功能编码）</li>
+        <li>与《博物志》《夷坚志》等同期文献进行横向比较</li>
+        <li>结合GIS技术对文本中的地理信息进行空间可视化</li>
+      </ul>
+    </section>
+
+    <section id="sample" class="content-section">
+      <h2>样例数据</h2>
+      <p>以下展示数据集中一条典型的分类记录：</p>
+      <pre><code>{
+  "id": "bianhua",
+  "name": "变化",
+  "count": 23,
+  "percentage": 24.2,
+  "core_plot": "以'形变'为核心，强调人与异类之间的转换变化",
+  "subtypes": [
+    {"name": "人变为异类或升格", "description": "人主动或被动转化为异类"},
+    {"name": "异类现原形或消散", "description": "异类在特定条件下显露真身或消失"},
+    {"name": "画与人的双向互动", "description": "画中世界与现实世界的交互"}
+  ],
+  "examples_in_thesis": ["虢州五城县黑鱼谷", "妒妇津"]
+}</code></pre>
+      <p>完整的12类分类数据及文化史分析结论，请下载JSON数据集查看。</p>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="logo">酉阳杂俎研究</span><p>志怪叙事与晚唐文化史 · 数字人文项目</p></div>
+    <div class="footer-links">
+      <a href="index.html">首页</a>
+      <a href="framework.html">研究框架</a>
+      <a href="text-analysis.html">文本分析</a>
+      <a href="data-visualization.html">数据可视化</a>
+      <a href="database.html">数据库</a>
+      <a href="bibliography.html">参考文献</a>
+    </div>
+    <div class="footer-credit">数据更新于 2026年5月</div>
+  </div>
+</footer>
+
+<script src="js/academic.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{"file": "《博物志》与《酉阳杂俎》异物书写认知转型初探_朱彦瑾.pdf", "type": "pdf", "title": "《博物志》与《酉阳杂俎》异物书写认知转型初探", "author": "朱彦瑾", "doc_type": "thesis", "year": "2025", "issue": "20", "doi": "10.14014/j.cnki.cn11-2597/g2.2025.20.046"}
+---
+{"file": "《酉阳杂俎·天咫》佛道文化研究_郭怡箫.pdf", "type": "pdf", "title": "《酉阳杂俎·天咫》佛道文化研究", "author": "郭怡箫", "doc_type": "article", "journal": "郭怡箫：《酉阳杂俎·天咫》佛道文化研究", "year": "２０２４", "issue": "３", "volume": "３９", "doi": "10.20068/j.cnki.jxitsh.2024.0041"}
+---
+{"file": "《酉阳杂俎》中的纺织服饰社会文化史研究_李龙.pdf", "type": "article", "title": "《酉阳杂俎》中的纺织服饰社会文化史研究", "author": "李龙,李强", "doc_type": "article", "start_page": "14", "end_page": "22.", "journal": "武汉纺织大学学报", "year": "2025", "volume": "38", "issue": "1", "citation_format_raw": "李龙，李强.《酉阳杂俎》中的纺织服饰社会文化史研究[J]. 武汉纺织大学学报，2025，38（1）：14-22."}
+---
+{"file": "《酉阳杂俎》传奇类小说中典型人物的叙事功能_朱琳畅.pdf", "type": "pdf", "title": "《酉阳杂俎》传奇类小说中典型人物的叙事功能", "author": "朱琳畅", "doc_type": "article", "journal": "[D].中南大学，2010.", "year": "1981", "doi": "10.16692/j.cnki.wxjyx.2020.06.015"}
+---
+{"file": "《酉阳杂俎》所见民间信仰研究_郭怡箫.pdf", "type": "pdf", "title": "《酉阳杂俎》所见民间信仰研究", "author": "郭怡箫", "doc_type": "thesis"}
+---
+{"file": "《酉阳杂俎》折射的唐代神怪小说发展特点与路径_刘勇强.pdf", "type": "pdf", "title": "《酉阳杂俎》折射的唐代神怪小说发展特点与路径", "author": "刘勇强", "doc_type": "article", "journal": "《唐代小说史话》，文化艺术出版社，1990年，第233、234页。", "year": "2015", "start_page": "2095", "end_page": "5804"}
+---
